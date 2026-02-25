@@ -53,7 +53,44 @@ https://en.wikipedia.org/wiki/General_MIDI#Percussion
 
 https://en.wikipedia.org/wiki/General_MIDI#GS_extensions
 
-Use channel =9=. Keys range from =1B= to =57=.
+Use channel =9=.
+
+|                        | 1B: High Q         |
+| 1C: Slap               |                    |
+| 1D: Scratch Push       | 1E: Scratch Pull   |
+| 1F: Sticks             | 20: Square Click   |
+| 21: Metronome Click    | 22: Metronome Bell |
+| 23: Acoustic Bass Drum |                    |
+| 24: Electric Bass Drum | 25: Side Stick     |
+| 26: Acoustic Snare     | 27: Hand Clap      |
+| 28: Electric Snare     |                    |
+| 29: Low Floor Tom      | 2A: Closed Hi-Hat  |
+| 2B: High Floor Tom     | 2C: Pedal Hi-Hat   |
+| 2D: Low Tom            | 2E: Open Hi-Hat    |
+| 2F: Low Mid Tom        |                    |
+| 30: Hi-Mid Tom         | 31: Crash Cymbal 1 |
+| 32: High Tom           | 33: Ride Cymbal 1  |
+| 34: Chinese Cymbal     |                    |
+| 35: Ride Bell          | 36: Tambourine     |
+| 37: Splash Cymbal      | 38: Cowbell        |
+| 39: Crash Cymbal 2     | 3A: Vibraslap      |
+| 3B: Ride Cymbal 2      |                    |
+| 3C: Hi Bongo           | 3D: Low Bongo      |
+| 3E: Mute Hi Conga      | 3F: Open Hi Conga  |
+| 40: Low Conga          |                    |
+| 41: High Timbale       | 42: Low Timbale    |
+| 43: High Agogo         | 44: Low Agogo      |
+| 45: Cabasa             | 46: Maracas        |
+| 47: Short Whistle      |                    |
+| 48: Long Whistle       | 49: Short Guiro    |
+| 4A: Long Guiro         | 4B: Claves         |
+| 4C: Hi Wood Block      |                    |
+| 4D: Low Wood Block     | 4E: Mute Cuica     |
+| 4F: Open Cuica         | 50: Mute Triangle  |
+| 51: Open Triangle      | 52: Shaker         |
+| 53: Jingle Bell        |                    |
+| 54: Belltree           | 55: Castanets      |
+| 56: Mute Surdo         | 57: Open Surdo     |
 
 ** Instruments
 
