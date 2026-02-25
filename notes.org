@@ -17,22 +17,22 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 
 ** Status Reference
 
-- =8x= Note Off
-- =9x= Note On
-- =Ax= Key Pressure
-- =Bx= Control Change
-- =Cx= Program Change
-- =Dx= Channel Pressure
-- =Ex= Pitch Wheel
-- =F0= System Exclusive
-- =FF= Meta Event
+- =8x kk vv= Note Off
+- =9x kk vv= Note On
+- =Ax kk vv= Key Pressure
+- =Bx cc vv= Control Change
+- =Cx pp=    Program Change
+- =Dx vv=    Channel Pressure
+- =Ex ll hh= Pitch Wheel
+- =F0 .. F7= System Exclusive
+- =FF .. ..= Meta Event
 
 *** Controllers
 
-- =Bx 01 xx= Modulation (Vibrato)
-- =Bx 07 xx= Channel Volume
-- =Bx 0A xx= Channel Panning
-- =Bx 0B xx= Expression
+- =Bx 01 vv= Modulation (Vibrato)
+- =Bx 07 vv= Channel Volume
+- =Bx 0A vv= Channel Panning
+- =Bx 0B vv= Expression
 - =Bx 78 00= All Sound Off
 - =Bx 79 00= Reset All Controllers
 - =Bx 7B 00= All Notes Off
