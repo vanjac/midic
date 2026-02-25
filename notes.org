@@ -4,26 +4,6 @@ https://midimusic.github.io/tech/midispec.html
 
 https://battleofthebits.com/lyceum/View/midi%20(format)
 
-** Template
-
-#+begin_example
-4D 54 68 64 # MThd
-00 00 00 06
-00 00 00 01 # Format 0
-00 40       # TPQN
-4D 54 72 6B # MTrk
-00 00 00 00
-		00
-
-99 22 7F	40 # ===
-99 21 7F	40 # ---
-99 21 7F	40 # ---
-99 21 7F	40 # ---
-
-B9 78 00	00
-FF 2F 00
-#+end_example
-
 ** Status Reference
 
 - =8x kk vv= Note Off
