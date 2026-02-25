@@ -26,17 +26,14 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 - =Bx 7E 00= Mono
 - =Bx 7F 00= Poly
 
-- =Bx 64 vv= RPN Low
-- =Bx 65 vv= RPN High
-- =Bx 06 vv= Data Entry
-
-**** RPN
-
 https://en.wikipedia.org/wiki/General_MIDI#RPN
 
-- =0000= Pitch bend range
-- =0001= Fine tune
-- =0002= Coarse tune
+- =Bx 64 vv= RPN Low
+  - =00= Pitch bend range
+  - =01= Fine tune
+  - =02= Coarse tune
+- =Bx 65 vv= RPN High
+- =Bx 06 vv= Data Entry
 
 *** Meta Events
 
