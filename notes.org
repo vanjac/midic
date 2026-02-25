@@ -1,0 +1,59 @@
+* SMF notes
+
+https://midimusic.github.io/tech/midispec.html
+
+** Header
+
+#+begin_example
+4D 54 68 64 # MThd
+00 00 00 06
+00 00 00 01 # Format 0
+00 20       # TPQN
+4D 54 72 6B # MTrk
+00 00 00 00
+#+end_example
+
+** Status Reference
+
+- =8x= Note Off
+- =9x= Note On
+- =Ax= Key Pressure
+- =Bx= Control Change
+- =Cx= Program Change
+- =Dx= Channel Pressure
+- =Ex= Pitch Wheel
+- =F0= System Exclusive
+- =FF= Meta Event
+
+*** Controllers
+
+- =Bx 01 xx= Modulation (Vibrato)
+- =Bx 07 xx= Channel Volume
+- =Bx 0A xx= Channel Panning
+- =Bx 0B xx= Expression
+- =Bx 78 00= All Sound Off
+- =Bx 79 00= Reset All Controllers
+- =Bx 7B 00= All Notes Off
+- =Bx 7E 00= Mono
+- =Bx 7F 00= Poly
+
+*** Meta Events
+
+- =FF 2F 00=        End of Track
+- =FF 51 03 tttttt= Set Tempo (microseconds per quarter-note = 60000000/BPM)
+- =FF 7F 00=        Do nothing
+
+** Keys
+
+|     Octave |  C | C# |  D | D# |  E |  F | F# |  G | G# |  A | A# | B  |
+|        *0* | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 0A | 0B |
+|          1 | 0C | 0D | 0E | 0F | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 |
+|          2 | 18 | 19 | 1A | 1B | 1C | 1D | 1E | 1F | 20 | 21 | 22 | 23 |
+|          3 | 24 | 25 | 26 | 27 | 28 | 29 | 2A | 2B | 2C | 2D | 2E | 2F |
+|        *4* | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 3A | 3B |
+| (Middle) 5 | 3C | 3D | 3E | 3F | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 |
+|          6 | 48 | 49 | 4A | 4B | 4C | 4D | 4E | 4F | 50 | 51 | 52 | 53 |
+|          7 | 54 | 55 | 56 | 57 | 58 | 59 | 5A | 5B | 5C | 5D | 5E | 5F |
+|        *8* | 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 6A | 6B |
+|          9 | 6C | 6D | 6E | 6F | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 |
+|         10 | 78 | 79 | 7A | 7B | 7C | 7D | 7E | 7F |    |    |    |    |
