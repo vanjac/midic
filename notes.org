@@ -13,14 +13,15 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 00 40       # TPQN
 4D 54 72 6B # MTrk
 00 00 00 00
+		00
 
-00	99 22 7F # ===
-40	99 21 7F # ---
-40	99 21 7F # ---
-40	99 21 7F # ---
+99 22 7F	40 # ===
+99 21 7F	40 # ---
+99 21 7F	40 # ---
+99 21 7F	40 # ---
 
-40	B9 78 00
-00	FF 2F 00 # End
+B9 78 00	00
+FF 2F 00
 #+end_example
 
 ** Status Reference
@@ -28,7 +29,7 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 - =8x kk vv= Note Off
 - =9x kk vv= Note On
 - =Bx cc vv= Control Change
-- =Cx pp=    Program Change
+- =Cx    pp= Program Change
 - =Ex ll hh= Pitch Wheel (center: =00 40=)
 - =F0 .. F7= System Exclusive
 - =FF .. ..= Meta Event
