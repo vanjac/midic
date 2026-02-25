@@ -1,10 +1,10 @@
-* SMF notes
+* SMF Reference
 
 https://midimusic.github.io/tech/midispec.html
 
 https://battleofthebits.com/lyceum/View/midi%20(format)
 
-** Status Reference
+** Events
 
 - =8x kk vv= Note Off
 - =9x kk vv= Note On
@@ -55,10 +55,11 @@ https://en.wikipedia.org/wiki/General_MIDI#GS_extensions
 
 Use channel =9=. Keys range from =1B= to =57=.
 
-** Instrument Families
+** Instruments
 
 https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
 
+Families:
 - =00= *Piano* /(Acoustic Grand, Bright Acoustic, Electric Grand, Honky-tonk, Rhodes, Chorused, Harpsichord, Clavinet)/
 - =08= *Chromatic Percussion* /(Celesta, Glockenspiel, Music Box, Vibraphone, Marimba, Xylophone, Tubular Bells, Dulcimer)/
 - =10= *Organ* /(Hammond, Percussive, Rock, Church, Reed, Accordion, Harmonica, Tango Accordion)/
