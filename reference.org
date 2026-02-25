@@ -91,3 +91,4 @@ Channel =9= only.
 - =20= Jazz
 - =28= Brush
 - =30= Orchestra
+- =38= SFX
