@@ -78,22 +78,22 @@ Use channel =9=. Keys range from =1B= to =57=.
 
 https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
 
-- =00= Piano
-- =08= Chromatic Percussion
-- =10= Organ
-- =18= Guitar
-- =20= Bass
-- =28= Strings
-- =30= Ensemble
-- =38= Brass
-- =40= Reed
-- =48= Pipe
-- =50= Synth Lead
-- =58= Synth Pad
-- =60= Synth Effects
-- =68= Ethnic
-- =70= Percussive
-- =78= Sound Effects
+- =00= Piano /(Acoustic Grand, Bright Acoustic, Electric Grand, Honky-tonk, Rhodes, Chorused, Harpsichord, Clavinet)/
+- =08= Chromatic Percussion /(Celesta, Glockenspiel, Music Box, Vibraphone, Marimba, Xylophone, Tubular Bells, Dulcimer)/
+- =10= Organ /(Hammond, Percussive, Rock, Church, Reed, Accordion, Harmonica, Tango Accordion)/
+- =18= Guitar /(Acoustic Nylon, Acoustic Steel, Electric Jazz, Electric Clean, Electric Muted, Overdriven, Distortion, Harmonics)/
+- =20= Bass /(Acoustic, Fingered Electric, Plucked Electric, Fretless, Slap 1, Slap 2, Synth 1, Synth 2)/
+- =28= Strings /(Violin, Viola, Cello, Contrabass, Tremolo, Pizzicato, Orchestral Harp, Timpani)/
+- =30= Ensemble /(Strings, Slow Strings, Synth Strings 1, Synth Strings 2, Choir Aahs, Choir Oohs, Synth Voice, Orchestral Hit)/
+- =38= Brass /(Trumpet, Trombone, Tuba, Muted Trumpet, French Horn, Section, Synth 1, Synth 2)/
+- =40= Reed /(Soprano Sax, Alto Sax, Tenor Sax, Baritone Sax, Oboe, English Horn, Bassoon, Clarinet)/
+- =48= Pipe /(Piccolo, Flute, Recorder, Pan Flute, Bottle Blow, Shakuhachi, Whistle, Ocarina)/
+- =50= Synth Lead /(Square Wave, Sawtooth Wave, Calliope, Chiff, Charang, Voice, Fifths, Bass)/
+- =58= Synth Pad /(New Age, Warm, Polysynth, Choir, Bowed, Metallic, Halo, Sweep)/
+- =60= Synth Effects /(Rain, Soundtrack, Crystal, Atmosphere, Brightness, Goblins, Echoes, Sci-Fi)/
+- =68= Ethnic /(Sitar, Banjo, Shamisen, Koto, Kalimba, Bagpipe, Fiddle, Shanai)/
+- =70= Percussive /(Tinkle Bell, Agogo, Steel Drums, Woodblock, Taiko Drum, Melodic Tom, Synth Drum, Reverse Cymbal)/
+- =78= Sound Effects /(Guitar Fret, Breath, Seashore, Bird Tweet, Telephone Ring, Helicopter, Applause, Gun Shot)/
 
 *** Drumkits
 
