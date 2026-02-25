@@ -14,7 +14,12 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 4D 54 72 6B # MTrk
 00 00 00 00
 
+00	99 22 7F # ===
+20	99 21 7F # ---
+20	99 21 7F # ---
+20	99 21 7F # ---
 
+20	B9 78 00
 00	FF 2F 00 # End
 #+end_example
 
