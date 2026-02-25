@@ -22,11 +22,9 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 
 - =8x kk vv= Note Off
 - =9x kk vv= Note On
-- =Ax kk vv= Key Pressure
 - =Bx cc vv= Control Change
 - =Cx pp=    Program Change
-- =Dx vv=    Channel Pressure
-- =Ex ll hh= Pitch Wheel
+- =Ex ll hh= Pitch Wheel (center: =00 40=)
 - =F0 .. F7= System Exclusive
 - =FF .. ..= Meta Event
 
