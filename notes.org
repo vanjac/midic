@@ -4,7 +4,7 @@ https://midimusic.github.io/tech/midispec.html
 
 https://battleofthebits.com/lyceum/View/midi%20(format)
 
-** Header
+** Template
 
 #+begin_example
 4D 54 68 64 # MThd
@@ -13,6 +13,9 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 00 20       # TPQN
 4D 54 72 6B # MTrk
 00 00 00 00
+
+
+00	FF 2F 00 # End
 #+end_example
 
 ** Status Reference
@@ -59,3 +62,47 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 |        *8* | 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 6A | 6B |
 |          9 | 6C | 6D | 6E | 6F | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 |
 |         10 | 78 | 79 | 7A | 7B | 7C | 7D | 7E | 7F |    |    |    |    |
+
+*** Percussion Keys
+
+https://en.wikipedia.org/wiki/General_MIDI#Percussion
+
+https://en.wikipedia.org/wiki/General_MIDI#GS_extensions
+
+Use channel =9=. Keys range from =1B= to =57=.
+
+** Instrument Families
+
+https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
+
+- =00= Piano
+- =08= Chromatic Percussion
+- =10= Organ
+- =18= Guitar
+- =20= Bass
+- =28= Strings
+- =30= Ensemble
+- =38= Brass
+- =40= Reed
+- =48= Pipe
+- =50= Synth Lead
+- =58= Synth Pad
+- =60= Synth Effects
+- =68= Ethnic
+- =70= Percussive
+- =78= Sound Effects
+
+*** Drumkits
+
+https://en.wikipedia.org/wiki/Roland_GS#Drum_kits
+
+Channel =9= only.
+
+- =00= Standard
+- =08= Room
+- =10= Power
+- =18= Electronic
+- =19= TR-808
+- =20= Jazz
+- =28= Brush
+- =30= Orchestra
