@@ -2,6 +2,8 @@
 
 https://midimusic.github.io/tech/midispec.html
 
+https://battleofthebits.com/lyceum/View/midi%20(format)
+
 ** Header
 
 #+begin_example
