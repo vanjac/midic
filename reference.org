@@ -16,6 +16,7 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 
 *** Controllers
 
+- =Bx 00 vv= Bank Select
 - =Bx 01 vv= Modulation (Vibrato)
 - =Bx 07 vv= Channel Volume
 - =Bx 0A vv= Channel Panning
