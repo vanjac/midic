@@ -1,10 +1,15 @@
 #!/bin/sh
 set -eu
 
-# Usage: sh midic.sh output.mid < input.hex
 # Only format 0 files are supported.
 
+case "${1:-}" in
+	*.mid | *.midi | *.smf) ;;
+	*) echo "Usage: $0 output.mid < input.hex"; exit ;;
+esac
+
+rm -f "$1"
 # Skip comments ('#') and all unrecognized characters
-grep -o '^[^#]*' | xxd -r -p > "$1"
+grep -o '^[^#]*' | xxd -r -p - "$1"
 # Calculate and overwrite MTrk chunk size
-printf "%08x\n" $(($(stat -c "%s" "$1") - 22)) | xxd -r -p -s 18 - "$1"
+printf "%08x" $(($(stat -c "%s" "$1") - 22)) | xxd -r -p -s 18 - "$1"
