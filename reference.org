@@ -40,7 +40,6 @@ https://en.wikipedia.org/wiki/General_MIDI#RPN
 
 - =FF 2F 00=        End of Track
 - =FF 51 03 tttttt= Set Tempo (microseconds per quarter-note = 60000000/BPM)
-- =FF 7F 00=        Do nothing
 
 ** Keys
 
