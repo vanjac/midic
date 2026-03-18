@@ -16,7 +16,7 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
 
 *** Controllers
 
-- =Bx 00 vv= Bank Select
+- =Bx 00 vv= Bank Select (set /before/ program change)
 - =Bx 01 vv= Modulation (Vibrato)
 - =Bx 07 vv= Channel Volume
 - =Bx 0A vv= Channel Panning
@@ -107,22 +107,22 @@ Use channel =9=.
 https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
 
 Families:
-- =00= *Piano* /(Acoustic Grand, Bright Acoustic, Electric Grand, Honky-tonk, Rhodes, Chorused, Harpsichord, Clavinet)/
-- =08= *Chromatic Percussion* /(Celesta, Glockenspiel, Music Box, Vibraphone, Marimba, Xylophone, Tubular Bells, Dulcimer)/
-- =10= *Organ* /(Hammond, Percussive, Rock, Church, Reed, Accordion, Harmonica, Tango Accordion)/
-- =18= *Guitar* /(Acoustic Nylon, Acoustic Steel, Electric Jazz, Electric Clean, Electric Muted, Overdriven, Distortion, Harmonics)/
-- =20= *Bass* /(Acoustic, Fingered Electric, Plucked Electric, Fretless, Slap 1, Slap 2, Synth 1, Synth 2)/
-- =28= *Strings* /(Violin, Viola, Cello, Contrabass, Tremolo, Pizzicato, Orchestral Harp, Timpani)/
-- =30= *Ensemble* /(Strings, Slow Strings, Synth Strings 1, Synth Strings 2, Choir Aahs, Choir Oohs, Synth Voice, Orchestral Hit)/
-- =38= *Brass* /(Trumpet, Trombone, Tuba, Muted Trumpet, French Horn, Section, Synth 1, Synth 2)/
+- =00= *Piano* /(Acoustic Grand^{08,10}, Bright Acoustic^{08}, Electric Grand^{08}, Honky-tonk^{08}, Rhodes^{08,10,18}, Chorused^{08,10}, Harpsichord^{08,10,18}, Clavinet)/
+- =08= *Chromatic Percussion* /(Celesta, Glockenspiel, Music Box, Vibraphone^{08}, Marimba^{08}, Xylophone, Tubular Bells^{08,09}, Dulcimer)/
+- =10= *Organ* /(Hammond^{08,10,20}, Percussive^{08,20}, Rock, Church^{08,10}, Reed, Accordion^{08}, Harmonica, Tango Accordion)/
+- =18= *Guitar* /(Acoustic Nylon^{08,10,20}, Acoustic Steel^{08,10}, Electric Jazz^{08}, Electric Clean^{08}, Electric Muted^{08,10}, Overdriven, Distortion^{08}, Harmonics^{08})/
+- =20= *Bass* /(Acoustic, Fingered Electric, Plucked Electric, Fretless, Slap 1, Slap 2, Synth 1^{01,08}, Synth 2^{08,10})/
+- =28= *Strings* /(Violin^{08}, Viola, Cello, Contrabass, Tremolo, Pizzicato, Orchestral Harp, Timpani)/
+- =30= *Ensemble* /(Strings^{08}, Slow Strings, Synth Strings 1^{08}, Synth Strings 2, Choir Aahs^{20}, Choir Oohs, Synth Voice, Orchestral Hit)/
+- =38= *Brass* /(Trumpet, Trombone^{01}, Tuba, Muted Trumpet, French Horn^{01}, Section^{08}, Synth 1^{08,10}, Synth 2^{08,10})/
 - =40= *Reed* /(Soprano Sax, Alto Sax, Tenor Sax, Baritone Sax, Oboe, English Horn, Bassoon, Clarinet)/
 - =48= *Pipe* /(Piccolo, Flute, Recorder, Pan Flute, Bottle Blow, Shakuhachi, Whistle, Ocarina)/
-- =50= *Synth Lead* /(Square Wave, Sawtooth Wave, Calliope, Chiff, Charang, Voice, Fifths, Bass)/
+- =50= *Synth Lead* /(Square Wave^{01,08}, Sawtooth Wave^{01,08}, Calliope, Chiff, Charang, Voice, Fifths, Bass)/
 - =58= *Synth Pad* /(New Age, Warm, Polysynth, Choir, Bowed, Metallic, Halo, Sweep)/
-- =60= *Synth Effects* /(Rain, Soundtrack, Crystal, Atmosphere, Brightness, Goblins, Echoes, Sci-Fi)/
-- =68= *Ethnic* /(Sitar, Banjo, Shamisen, Koto, Kalimba, Bagpipe, Fiddle, Shanai)/
-- =70= *Percussive* /(Tinkle Bell, Agogo, Steel Drums, Woodblock, Taiko Drum, Melodic Tom, Synth Drum, Reverse Cymbal)/
-- =78= *Sound Effects* /(Guitar Fret, Breath, Seashore, Bird Tweet, Telephone Ring, Helicopter, Applause, Gun Shot)/
+- =60= *Synth Effects* /(Rain, Soundtrack, Crystal^{01}, Atmosphere, Brightness, Goblins, Echoes^{01,02}, Sci-Fi)/
+- =68= *Ethnic* /(Sitar^{01}, Banjo, Shamisen, Koto^{08}, Kalimba, Bagpipe, Fiddle, Shanai)/
+- =70= *Percussive* /(Tinkle Bell, Agogo, Steel Drums, Woodblock^{08}, Taiko Drum^{08}, Melodic Tom^{08}, Synth Drum^{08,09}, Reverse Cymbal)/
+- =78= *Sound Effects* /(Guitar Fret^{01,02}, Breath^{01}, Seashore^{01-05}, Bird Tweet^{01-03}, Telephone Ring^{01-05}, Helicopter^{01-09}, Applause^{01-05}, Gun Shot^{01-03})/
 
 *** Drumkits
 
