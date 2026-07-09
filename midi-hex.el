@@ -43,6 +43,7 @@ Based on org-increase-number-at-point"
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI hex files."
-  (setq-local comment-start "# "))
+  (setq-local comment-start "# ")
+  (setq-local compilation-ask-about-save nil))
 
 (provide 'midi-hex)
