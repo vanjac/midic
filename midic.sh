@@ -9,7 +9,16 @@ case "${1:-}" in
 esac
 
 rm -f "$1"
-# Skip comments ('#') and lines between < > markers
-sed 's/#.*//;/^</,/^>/{/^>/!d};s/^>//' | xxd -r -p - "$1"
+sed 's/#.*//;/^</,/^>/{/^>/!d};s/^>//' | # Skip comments ('#') and lines between < > markers
+	while read -r line; do
+		case "$line" in
+			*[*]*) # Match loop syntax
+				printf "%02x\n" $(seq ${line##*[*]}) | while read hex; do
+					printf "%s" "${line%[*]*}" | sed "s/__/$hex/g"
+				done ;;
+			*) printf "%s" "$line" ;;
+		esac
+	done |
+	xxd -r -p - "$1"
 # Calculate and overwrite MTrk chunk size
 printf "%08x" $(($(stat -c "%s" "$1") - 22)) | xxd -r -p -s 18 - "$1"
