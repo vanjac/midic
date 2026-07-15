@@ -4,6 +4,14 @@ https://midimusic.github.io/tech/midispec.html
 
 https://battleofthebits.com/lyceum/View/midi%20(format)
 
+** Format 0 File Structure
+
+- MThd header (14 bytes)
+- MTrk header (8 bytes)
+- For each event:
+  - Delta time (1+ bytes, variable-length quantity)
+  - Event data
+
 ** Events
 
 - =8x kk vv= Note Off
