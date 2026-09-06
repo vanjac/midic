@@ -1,6 +1,8 @@
 Add-Type -AssemblyName System.Runtime.WindowsRuntime
 $MidiSynthesizer = `
 	[Windows.Devices.Midi.MidiSynthesizer, Windows.Devices.Midi, ContentType=WindowsRuntime]
+$WindowsRuntimeBufferExtensions = `
+	[Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions]
 
 # https://fleexlab.blogspot.com/2018/02/using-winrts-iasyncoperation-in.html
 $asTaskMethod = ([WindowsRuntimeSystemExtensions].GetMethods() | ? {
@@ -17,6 +19,12 @@ while ($true) {
 	$in = Read-Host
 	$bytes = [bigint]::Parse($in, 'HexNumber').ToByteArray()
 	[array]::Reverse($bytes)
-	$buf = [Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions]::AsBuffer($bytes)
-	$port.SendBuffer($buf)
+	$start = 0
+	foreach ($i in 1 .. $bytes.Length) {
+		if (($i -eq $bytes.Length) -or (($bytes[$i] -band 0x80) -ne 0)) {
+			$buf = $WindowsRuntimeBufferExtensions::AsBuffer($bytes[$start .. ($i - 1)])
+			$port.SendBuffer($buf)
+			$start = $i
+		}
+	}
 }
