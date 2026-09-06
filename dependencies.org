@@ -1,0 +1,17 @@
+* Dependencies
+
+** Common
+- coreutils
+- sh
+- awk
+- xxd
+
+** Editor Integration
+- Emacs
+- GNU Make
+
+** Live Preview (Linux)
+- fluidsynth
+
+** Live Preview (Windows)
+- Windows PowerShell 5
