@@ -1,8 +1,6 @@
 Add-Type -AssemblyName System.Runtime.WindowsRuntime
-$MidiSynthesizer = `
-	[Windows.Devices.Midi.MidiSynthesizer, Windows.Devices.Midi, ContentType=WindowsRuntime]
-$WindowsRuntimeBufferExtensions = `
-	[Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions]
+$MidiSynth = [Windows.Devices.Midi.MidiSynthesizer,Windows.Devices.Midi,ContentType=WindowsRuntime]
+$BufExt = [Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions]
 
 # https://fleexlab.blogspot.com/2018/02/using-winrts-iasyncoperation-in.html
 $asTaskMethod = ([WindowsRuntimeSystemExtensions].GetMethods() | ? {
@@ -10,8 +8,8 @@ $asTaskMethod = ([WindowsRuntimeSystemExtensions].GetMethods() | ? {
 	$_.GetParameters()[0].ParameterType.Name -eq 'IAsyncOperation`1'
 })[0]
 
-$portAsync = $MidiSynthesizer::CreateAsync()
-$portTask = $asTaskMethod.MakeGenericMethod($MidiSynthesizer).Invoke($null, @($portAsync))
+$portAsync = $MidiSynth::CreateAsync()
+$portTask = $asTaskMethod.MakeGenericMethod($MidiSynth).Invoke($null, @($portAsync))
 $portTask.Wait()
 $port = $portTask.Result
 
@@ -22,7 +20,7 @@ while ($true) {
 	$start = 0
 	foreach ($i in 1 .. $bytes.Length) {
 		if (($i -eq $bytes.Length) -or (($bytes[$i] -band 0x80) -ne 0)) {
-			$buf = $WindowsRuntimeBufferExtensions::AsBuffer($bytes[$start .. ($i - 1)])
+			$buf = $BufExt::AsBuffer($bytes[$start .. ($i - 1)])
 			$port.SendBuffer($buf)
 			$start = $i
 		}
