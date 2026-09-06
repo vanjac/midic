@@ -1,8 +1,17 @@
 #!/usr/bin/env -S awk -Wposix -f
+
+# Syntax:
+#   0-9 A-F   Hex digits
+#   #         Line comment
+#   < >       Skip lines between
+#   :         Repeat line (: count : start : end)
+#   __        Interpolate value
+#   *+,-./    Ignored
+
 BEGIN { FS = ":" }
 /^</,/^>/ { if (!/^>/) next }
 {
-	gsub(/(^>|#.*|[*-/])/, "")
+	gsub(/(^>|#.*|[*-/]|[[:space:]])/, "")
 	count = (NF > 1) ? $2 : 1
 	for (i = 0; i < count; i++) {
 		line = $1
