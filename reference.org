@@ -12,6 +12,8 @@ https://battleofthebits.com/lyceum/View/midi%20(format)
   - Delta time (1+ bytes, variable-length quantity)
   - Event data
 
+For ease of parsing, limit delta times to 1 byte (=00= thru =7F=).
+
 ** Events
 
 - =8x kk vv= Note Off
