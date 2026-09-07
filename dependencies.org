@@ -3,7 +3,7 @@
 ** Common
 - coreutils
 - sh
-- awk
+- python3
 - xxd
 
 ** Editor Integration
