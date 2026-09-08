@@ -13,9 +13,8 @@ $portTask = $asTaskMethod.MakeGenericMethod($MidiSynth).Invoke($null, @($portAsy
 $portTask.Wait()
 $port = $portTask.Result
 
-while ($true) {
-	$in = Read-Host
-	$bytes = [bigint]::Parse($in, 'HexNumber').ToByteArray()
+python $PSScriptRoot\midic.py | % {
+	$bytes = [bigint]::Parse($_, 'HexNumber').ToByteArray()
 	[array]::Reverse($bytes)
 	$port.SendBuffer($BufExt::AsBuffer($bytes))
 }
