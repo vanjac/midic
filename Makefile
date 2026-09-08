@@ -1,2 +1,3 @@
 %.mid: %.hex
-	sh midic.sh "$@" < "$<"
+	rm -f "$@"
+	python midic.py -f smf -i "$<" -o "$@"

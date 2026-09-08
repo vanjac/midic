@@ -1,10 +1,7 @@
 * Dependencies
 
 ** Common
-- coreutils
-- sh
 - python3
-- xxd
 
 ** Editor Integration
 - Emacs
