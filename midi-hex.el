@@ -11,9 +11,15 @@
   "M-<left>" #'midi-prev-tab-stop
   "<tab>" #'midi-next-tab-stop
   "<backtab>" #'midi-prev-tab-stop
-  "C-c TAB" #'tabify
+  "C-c TAB" #'midi-cleanup
   "C-M-<right>" #'midi-increase-hex-at-point
   "C-M-<left>" #'midi-decrease-hex-at-point)
+
+(defun midi-cleanup (start end)
+  "Clean up whitespace in region."
+  (interactive "r")
+  (delete-trailing-whitespace start end)
+  (tabify start end))
 
 (defun midi-next-tab-stop ()
   "Move point to next defined tab-stop column."
