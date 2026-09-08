@@ -93,7 +93,7 @@ Based on org-increase-number-at-point"
   (interactive)
   (midi--send (thing-at-point 'line)))
 
-(defun midi-play-line-and-advance()
+(defun midi-play-line-and-advance ()
   "Send current line to the MIDI synth, and move to the next line."
   (interactive)
   (midi-play-line)
