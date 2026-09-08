@@ -17,12 +17,5 @@ while ($true) {
 	$in = Read-Host
 	$bytes = [bigint]::Parse($in, 'HexNumber').ToByteArray()
 	[array]::Reverse($bytes)
-	$start = 0
-	foreach ($i in 1 .. $bytes.Length) {
-		if (($i -eq $bytes.Length) -or (($bytes[$i] -band 0x80) -ne 0)) {
-			$buf = $BufExt::AsBuffer($bytes[$start .. ($i - 1)])
-			$port.SendBuffer($buf)
-			$start = $i
-		}
-	}
+	$port.SendBuffer($BufExt::AsBuffer($bytes))
 }
