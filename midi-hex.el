@@ -7,20 +7,27 @@
     table))
 
 (defvar-keymap midi-hex-mode-map
-  "<tab>" #'move-to-tab-stop
-  "<backtab>" #'move-to-prev-tab-stop
+  "M-<right>" #'midi-next-tab-stop
+  "M-<left>" #'midi-prev-tab-stop
+  "<tab>" #'midi-next-tab-stop
+  "<backtab>" #'midi-prev-tab-stop
   "C-c TAB" #'tabify
-  "C-M-S-<right>" #'increase-hex-number-at-point
-  "C-M-S-<left>" #'decrease-hex-number-at-point)
+  "C-M-<right>" #'midi-increase-hex-at-point
+  "C-M-<left>" #'midi-decrease-hex-at-point)
 
-(defun move-to-prev-tab-stop ()
+(defun midi-next-tab-stop ()
+  "Move point to next defined tab-stop column."
+  (interactive "^")
+  (move-to-tab-stop))
+
+(defun midi-prev-tab-stop ()
   "Move point to previous defined tab-stop column."
-  (interactive)
+  (interactive "^")
   (let ((prevtab (indent-next-tab-stop (current-column) t)))
     (when (wholenump prevtab)
       (move-to-column prevtab t))))
 
-(defun increase-hex-number-at-point (&optional inc)
+(defun midi-increase-hex-at-point (&optional inc)
   "Increment hex value at point, clamped to the range of the available digits.
 Based on org-increase-number-at-point"
   (interactive "p")
@@ -36,10 +43,10 @@ Based on org-increase-number-at-point"
       (delete-region (+ pos beg) (+ pos beg end))
       (insert new-num-str))))
 
-(defun decrease-hex-number-at-point (&optional inc)
+(defun midi-decrease-hex-at-point (&optional inc)
   "Decrement hex value at point."
   (interactive "p")
-  (increase-hex-number-at-point (- (or inc 1))))
+  (midi-increase-hex-at-point (- (or inc 1))))
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI hex files."
