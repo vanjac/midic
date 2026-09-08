@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+(require 'comint)
+
 (defvar midi-hex-mode-syntax-table
   (let ((table (make-syntax-table)))
     (modify-syntax-entry ?# "<\n" table)
@@ -7,11 +9,11 @@
     table))
 
 (defvar-keymap midi-hex-mode-map
+  "C-c TAB" #'midi-cleanup
   "M-<right>" #'midi-next-tab-stop
   "M-<left>" #'midi-prev-tab-stop
   "<tab>" #'midi-next-tab-stop
   "<backtab>" #'midi-prev-tab-stop
-  "C-c TAB" #'midi-cleanup
   "C-M-<right>" #'midi-increase-hex-at-point
   "C-M-<left>" #'midi-decrease-hex-at-point
   "C-c C-r" #'midi-comint
@@ -70,13 +72,13 @@ Based on org-increase-number-at-point"
 (defvar midi-comint-buffer-name "*midi*")
 
 (defun midi-comint ()
-    "(Re)start MIDI synth process for live playback."
-    (interactive)
-    (with-current-buffer (get-buffer-create midi-comint-buffer-name)
-      (unless (derived-mode-p 'comint-mode)
-	(comint-mode))
-      (comint-exec (current-buffer) midi-comint-buffer-name midi-comint-program nil nil))
-    (message "Started MIDI synth"))
+  "(Re)start MIDI synth process for live playback."
+  (interactive)
+  (with-current-buffer (get-buffer-create midi-comint-buffer-name)
+    (unless (derived-mode-p 'comint-mode)
+      (comint-mode))
+    (comint-exec (current-buffer) midi-comint-buffer-name midi-comint-program nil nil))
+  (message "Started MIDI synth"))
 
 (defun midi-stop ()
   "Stop MIDI synth process."
