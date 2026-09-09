@@ -67,7 +67,7 @@ Based on org-increase-number-at-point"
 (defvar midi-comint-program
   (if (eq system-type 'windows-nt)
       (midi--path-from-here "playlive.cmd")
-    (midi--path-from-here "playlive.py")))
+    (midi--path-from-here "playlive.sh")))
 
 (defvar midi-comint-buffer-name "*midi*")
 
