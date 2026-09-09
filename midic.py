@@ -42,7 +42,7 @@ for line in args.input:
                 continue
             evidx = 0
             for j in range(1, len(b) + 1):
-                if j == len(b) or (b[j] & 0x80) != 0:
+                if j == len(b) or ((b[j] & 0x80) != 0 and (b[evidx] & 0xF0) != 0xF0):
                     ev = b[evidx:j]
                     evidx = j
                     if args.format == 'fluidsynth':
