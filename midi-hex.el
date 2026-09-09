@@ -103,7 +103,7 @@ Based on org-increase-number-at-point"
   "Send all-sound-off command for each channel."
   (interactive)
   (dotimes (c 16)
-    (midi--send (format "B%X7800\n" c))))
+    (midi--send (format ">B%X7800\n" c))))
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI hex files."
