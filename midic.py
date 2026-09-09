@@ -7,14 +7,6 @@ parser.add_argument('-o', '--output', default='-', type=argparse.FileType('wb'))
 parser.add_argument('-f', '--format', default='hex', choices=['hex', 'smf', 'fluidsynth'])
 args = parser.parse_args()
 
-# Syntax:
-#   0-9 A-F   Hex digits
-#   #         Line comment
-#   < >       Skip lines between
-#   :         Repeat line (: count : start : end)
-#   __        Interpolate value
-#   *+,-./    Ignored
-
 def parse_fields(hexstr, count='1', start='0', end='0'):
     return hexstr, int(count, 0), int(start, 0), int(end, 0)
 

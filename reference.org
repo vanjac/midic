@@ -150,3 +150,14 @@ Channel =9= only.
 - =28= Brush
 - =30= Orchestra
 - =38= SFX
+
+* MIDI-Hex Syntax
+
+| Characters | Description                           |
+|------------+---------------------------------------|
+| =0-9 A-F=  | Hex digits                            |
+| =#=        | Line comment                          |
+| =< >=      | Skip lines between                    |
+| =:=        | Repeat line (=: count : start : end=) |
+| =__=       | Interpolate value                     |
+| =*+,-./=   | Ignored                               |
