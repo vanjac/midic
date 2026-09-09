@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-import argparse
-import os
-import re
+import argparse, os, re
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input', default='-', type=argparse.FileType('r'))
@@ -43,10 +41,10 @@ for line in args.input:
                 args.output.write(b)
                 continue
             evidx = 0
-            for i in range(1, len(b) + 1):
-                if i == len(b) or (b[i] & 0x80) != 0:
-                    ev = b[evidx:i]
-                    evidx = i
+            for j in range(1, len(b) + 1):
+                if j == len(b) or (b[j] & 0x80) != 0:
+                    ev = b[evidx:j]
+                    evidx = j
                     if args.format == 'fluidsynth':
                         args.output.write(make_fluidsynth_cmd(ev).encode())
                     elif args.format == 'hex':
@@ -55,4 +53,4 @@ for line in args.input:
 if args.format == 'smf':
     size = args.output.tell() - 22
     args.output.seek(18, os.SEEK_SET)
-    args.output.write(size.to_bytes(4))
+    args.output.write(size.to_bytes(4, 'big'))
