@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, os, re
+import argparse, logging, os, re, sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input', default='-', type=argparse.FileType('r'))
@@ -28,10 +28,12 @@ def make_fluidsynth_cmd(b):
         case 0xE: return f'pitch_bend {chan} {b[1] + 128 * b[2]}\n'
         case _: return ''
 
+status = 0
 skip = False
 for line in args.input:
     skip = (skip or line.startswith('<')) and not line.startswith('>')
-    if not skip:
+    if skip: continue
+    try:
         f = re.sub(r'(^>|#.*|[*-/])', '', line).split(':')
         hexstr, count, start, end = parse_fields(*f)
         for i in range(count):
@@ -50,7 +52,11 @@ for line in args.input:
                     elif args.format == 'hex':
                         args.output.write((ev.hex() + '\n').encode())
                     args.output.flush()
+    except (IndexError, ValueError):
+        logging.exception('Error while parsing line: %s', line)
+        status = 1
 if args.format == 'smf':
     size = args.output.tell() - 22
     args.output.seek(18, os.SEEK_SET)
     args.output.write(size.to_bytes(4, 'big'))
+sys.exit(status)
