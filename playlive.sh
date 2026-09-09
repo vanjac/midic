@@ -1,4 +1,4 @@
 #!/bin/sh
 set -eu
 
-python3 -u midic.py -f fluidsynth | fluidsynth -q
+python3 "$(dirname "$0")/midic.py" -f fluidsynth | fluidsynth -q
