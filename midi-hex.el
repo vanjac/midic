@@ -83,7 +83,8 @@ Based on org-increase-number-at-point"
 (defun midi-stop ()
   "Stop MIDI synth process."
   (interactive)
-  (delete-process (get-buffer-process midi-comint-buffer-name)))
+  (delete-process (get-buffer-process midi-comint-buffer-name))
+  (message "Stopped MIDI synth"))
 
 (defun midi--send (str)
   (comint-send-string (get-buffer-process midi-comint-buffer-name) str))
@@ -108,6 +109,7 @@ Based on org-increase-number-at-point"
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI hex files."
   (setq-local comment-start "# ")
-  (setq-local compilation-ask-about-save nil))
+  (setq-local compilation-ask-about-save nil)
+  (setq-local truncate-lines t))
 
 (provide 'midi-hex)
