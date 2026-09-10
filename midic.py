@@ -25,8 +25,8 @@ skip = False
 for line in args.input:
     skip = (skip or line.startswith('<')) and not line.startswith('>')
     if skip: continue
+    f = re.sub(r'(^>|#.*|[*-/])', '', line).split(':')
     try:
-        f = re.sub(r'(^>|#.*|[*-/])', '', line).split(':')
         hexstr, count, start, end = parse_fields(*f)
         for i in range(count):
             val = int(i / count * end + (count-i) / count * start)
@@ -44,8 +44,8 @@ for line in args.input:
                     elif args.format == 'hex':
                         args.output.write((ev.hex() + '\n').encode())
                     args.output.flush()
-    except (IndexError, ValueError):
-        logging.exception('Error while parsing line: %s', line)
+    except (IndexError, TypeError, ValueError):
+        logging.exception('While parsing line: `%s`', line.rstrip())
         status = 1
 if args.format == 'smf':
     size = args.output.tell() - 22
