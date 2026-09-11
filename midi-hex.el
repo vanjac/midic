@@ -12,15 +12,15 @@
   "C-c TAB" #'midi-cleanup
   "M-<right>" #'midi-next-tab-stop
   "M-<left>" #'midi-prev-tab-stop
-  "<tab>" #'midi-next-tab-stop
+  "TAB" #'midi-next-tab-stop
   "<backtab>" #'midi-prev-tab-stop
   "C-M-<right>" #'midi-increase-hex-at-point
   "C-M-<left>" #'midi-decrease-hex-at-point
   "C-c C-r" #'midi-comint
   "C-c C-o" #'midi-all-sound-off
   "C-c C-k" #'midi-stop
-  "M-<return>" #'midi-play-line
-  "M-S-<return>" #'midi-play-line-and-advance)
+  "M-RET" #'midi-play-line
+  "M-S-RET" #'midi-play-line-and-advance)
 
 (defun midi-cleanup (start end)
   "Clean up whitespace in region."
