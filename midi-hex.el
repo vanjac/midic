@@ -111,6 +111,15 @@ Based on org-increase-number-at-point"
   (setq-local comment-start "# ")
   (setq-local compilation-ask-about-save nil)
   (setq-local truncate-lines t)
-  (setq-local fill-column 240))
+  (setq-local fill-column 240)
+  (setq-local font-lock-defaults
+	      '((("\\b8[0-9a-fA-F]+" . font-lock-function-name-face)
+		 ("\\b9[0-9a-fA-F]+" . font-lock-constant-face)
+		 ("\\b[aA][0-9a-fA-F]+" . font-lock-warning-face)
+		 ("\\b[bB][0-9a-fA-F]+" . font-lock-keyword-face)
+		 ("\\b[cC][0-9a-fA-F]+" . font-lock-type-face)
+		 ("\\b[dD][0-9a-fA-F]+" . font-lock-warning-face)
+		 ("\\b[eE][0-9a-fA-F]+" . font-lock-variable-name-face)
+		 ("\\b[fF][0-9a-fA-F]+" . font-lock-preprocessor-face)))))
 
 (provide 'midi-hex)
