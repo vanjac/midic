@@ -12,8 +12,6 @@
   "C-c TAB" #'midi-cleanup
   "M-<right>" #'midi-next-tab-stop
   "M-<left>" #'midi-prev-tab-stop
-  "TAB" #'midi-next-tab-stop
-  "<backtab>" #'midi-prev-tab-stop
   "C-M-<right>" #'midi-increase-hex-at-point
   "C-M-<left>" #'midi-decrease-hex-at-point
   "C-c C-r" #'midi-comint
