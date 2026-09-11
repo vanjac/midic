@@ -40,6 +40,15 @@
     (when (wholenump prevtab)
       (move-to-column prevtab t))))
 
+(defun midi-forward-sentance (arg)
+  (if (>= arg 0)
+      (dotimes (i arg)
+	(skip-chars-forward "\t")
+	(skip-chars-forward "^\t\n"))
+    (dotimes (i (- arg))
+      (skip-chars-backward "\t")
+      (skip-chars-backward "^\t\n"))))
+
 (defun midi-increase-hex-at-point (&optional inc)
   "Increment hex value at point, clamped to the range of the available digits.
 Based on org-increase-number-at-point"
@@ -112,6 +121,7 @@ Based on org-increase-number-at-point"
   (setq-local compilation-ask-about-save nil)
   (setq-local truncate-lines t)
   (setq-local fill-column 240)
+  (setq-local forward-sentence-function #'midi-forward-sentance)
   (setq-local font-lock-defaults
 	      '((("\\b8[0-9a-fA-F]+" . font-lock-function-name-face)
 		 ("\\b9[0-9a-fA-F]+" . font-lock-constant-face)
