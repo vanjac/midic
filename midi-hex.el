@@ -110,6 +110,7 @@ Based on org-increase-number-at-point"
   "Major mode for editing MIDI hex files."
   (setq-local comment-start "# ")
   (setq-local compilation-ask-about-save nil)
-  (setq-local truncate-lines t))
+  (setq-local truncate-lines t)
+  (setq-local fill-column 240))
 
 (provide 'midi-hex)
