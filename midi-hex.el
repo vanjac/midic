@@ -89,6 +89,7 @@ Based on org-increase-number-at-point"
 		      (shell-quote-argument midi-build-script)
 		      (shell-quote-argument infile)
 		      (shell-quote-argument outfile))))
+    (delete-file outfile)
     (compilation-start cmd)))
 
 (defvar midi-comint-program
