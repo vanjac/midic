@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
-(require 'comint)
+(require 'compile)
+(require 'python)
 
 (defvar midi-hex-mode-syntax-table
   (let ((table (make-syntax-table)))
@@ -73,6 +74,23 @@ Based on org-increase-number-at-point"
 (defun midi--path-from-here (path)
   (concat (file-name-directory (or load-file-name (buffer-file-name))) path))
 
+(defvar midi-build-script
+  (midi--path-from-here "midic.py"))
+
+(defun midi-build ()
+  (interactive)
+  (if (not (derived-mode-p 'midi-hex-mode))
+      (error "Not in midi-hex mode"))
+  (save-buffer)
+  (let* ((infile (buffer-file-name))
+	 (outfile (file-name-with-extension infile "mid"))
+	 (cmd (format "%s %s -f smf -i %s -o %s"
+		      (shell-quote-argument python-interpreter)
+		      (shell-quote-argument midi-build-script)
+		      (shell-quote-argument infile)
+		      (shell-quote-argument outfile))))
+    (compilation-start cmd)))
+
 (defvar midi-comint-program
   (if (eq system-type 'windows-nt)
       (midi--path-from-here "playlive.cmd")
@@ -118,7 +136,6 @@ Based on org-increase-number-at-point"
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI hex files."
   (setq-local comment-start "# ")
-  (setq-local compilation-ask-about-save nil)
   (setq-local truncate-lines t)
   (setq-local fill-column 240)
   (setq-local forward-sentence-function #'midi-forward-sentance)
