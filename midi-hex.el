@@ -92,12 +92,28 @@ Based on org-increase-number-at-point"
     (delete-file outfile)
     (compilation-start cmd)))
 
+(defvar midi-play-program
+  (if (eq system-type 'windows-nt)
+      "wmplayer"
+    "fluidsynth"))
+
+(defvar midi-play-buffer-name "*midi-play*")
+
+(defun midi-play-file (file)
+  (interactive "f")
+  (when-let* ((proc (get-buffer-process midi-play-buffer-name)))
+    (delete-process proc))
+  (start-process midi-play-buffer-name midi-play-buffer-name midi-play-program)
+  (with-current-buffer midi-play-buffer-name
+    (special-mode))
+  (display-buffer midi-play-buffer-name))
+
 (defvar midi-comint-program
   (if (eq system-type 'windows-nt)
       (midi--path-from-here "playlive.cmd")
     (midi--path-from-here "playlive.sh")))
 
-(defvar midi-comint-buffer-name "*midi*")
+(defvar midi-comint-buffer-name "*midi-synth*")
 
 (defun midi-comint ()
   "(Re)start MIDI synth process for live playback."
@@ -111,7 +127,7 @@ Based on org-increase-number-at-point"
 (defun midi-stop ()
   "Stop MIDI synth process."
   (interactive)
-  (delete-process (get-buffer-process midi-comint-buffer-name))
+  (delete-process midi-comint-buffer-name)
   (message "Stopped MIDI synth"))
 
 (defun midi--send (str)
