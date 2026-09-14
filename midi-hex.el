@@ -15,6 +15,7 @@
   "M-<left>" #'midi-prev-tab-stop
   "C-M-<right>" #'midi-increase-hex-at-point
   "C-M-<left>" #'midi-decrease-hex-at-point
+  "C-c C-p" #'midi-build
   "C-c C-r" #'midi-comint
   "C-c C-o" #'midi-all-sound-off
   "C-c C-k" #'midi-stop
@@ -77,8 +78,9 @@ Based on org-increase-number-at-point"
 (defvar midi-build-script
   (midi--path-from-here "midic.py"))
 
-(defun midi-build ()
-  (interactive)
+(defun midi-build (no-play)
+  "Build and (optionally) play a MIDI file from MIDI-Hex"
+  (interactive "P")
   (if (not (derived-mode-p 'midi-hex-mode))
       (error "Not in midi-hex mode"))
   (save-buffer)
@@ -90,7 +92,12 @@ Based on org-increase-number-at-point"
 		      (shell-quote-argument infile)
 		      (shell-quote-argument outfile))))
     (delete-file outfile)
-    (compilation-start cmd)))
+    (with-current-buffer (compilation-start cmd)
+      (if (not no-play)
+	  (setq-local compilation-finish-functions
+		      (list (lambda (buf msg)
+			      (if (numberp (string-match-p "finished" msg))
+				  (midi-play-file outfile)))))))))
 
 (defvar midi-play-program
   (if (eq system-type 'windows-nt)
@@ -100,12 +107,14 @@ Based on org-increase-number-at-point"
 (defvar midi-play-buffer-name "*midi-play*")
 
 (defun midi-play-file (file)
+  "Play a MIDI file with the configured program."
   (interactive "f")
   (when-let* ((proc (get-buffer-process midi-play-buffer-name)))
     (delete-process proc))
   (start-process midi-play-buffer-name midi-play-buffer-name midi-play-program)
   (with-current-buffer midi-play-buffer-name
-    (special-mode))
+    (special-mode)
+    (goto-char (point-max)))
   (display-buffer midi-play-buffer-name))
 
 (defvar midi-comint-program
@@ -151,7 +160,7 @@ Based on org-increase-number-at-point"
     (midi--send (format ">B%X7800\n" c))))
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
-  "Major mode for editing MIDI hex files."
+  "Major mode for editing MIDI-Hex files."
   (setq-local comment-start "# ")
   (setq-local truncate-lines t)
   (setq-local fill-column 240)
