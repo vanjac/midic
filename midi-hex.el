@@ -20,7 +20,8 @@
   "C-c C-o" #'midi-all-sound-off
   "C-c C-k" #'midi-stop
   "M-RET" #'midi-play-line
-  "M-S-RET" #'midi-play-line-and-advance)
+  "M-S-RET" #'midi-play-line-and-advance
+  "M-S-<return>" #'midi-play-line-and-advance)
 
 (defun midi-cleanup (start end)
   "Clean up whitespace in region."
