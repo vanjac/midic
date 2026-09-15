@@ -111,7 +111,7 @@ Based on org-increase-number-at-point"
   (interactive "f")
   (when-let* ((proc (get-buffer-process midi-play-buffer-name)))
     (delete-process proc))
-  (start-process midi-play-buffer-name midi-play-buffer-name midi-play-program)
+  (start-process midi-play-buffer-name midi-play-buffer-name midi-play-program file)
   (with-current-buffer midi-play-buffer-name
     (special-mode)
     (goto-char (point-max)))
