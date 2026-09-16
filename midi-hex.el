@@ -167,7 +167,7 @@ Based on org-increase-number-at-point"
   (setq-local fill-column 240)
   (setq-local forward-sentence-function #'midi-forward-sentance)
   (setq-local font-lock-defaults
-	      '(((":[^\n]+" . font-lock-preprocessor-face)
+	      '(((":[^\n]*" . font-lock-preprocessor-face)
 		 ("\\b8[0-9a-fA-F]+\\b" . font-lock-constant-face)
 		 ("\\b9[0-9a-fA-F]+\\b" . font-lock-function-name-face)
 		 ("\\b[aA][0-9a-fA-F]+\\b" . font-lock-warning-face)
