@@ -176,6 +176,7 @@ Based on org-increase-number-at-point"
 		 ("\\b[dD][0-9a-fA-F]+\\b" . font-lock-warning-face)
 		 ("\\b[eE][0-9a-fA-F]+\\b" . font-lock-variable-name-face)
 		 ("\\b[fF][0-9a-fA-F]+\\b" . font-lock-preprocessor-face)
+		 ("[<>*-/]" . 'bold)
 		 ("[g-zG-Z]" . 'error)))))
 
 (provide 'midi-hex)
