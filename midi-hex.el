@@ -164,7 +164,7 @@ Based on org-increase-number-at-point"
   "Major mode for editing MIDI-Hex files."
   (setq-local comment-start "# ")
   (setq-local truncate-lines t)
-  (setq-local fill-column 240)
+  (setq-local fill-column 300)
   (setq-local forward-sentence-function #'midi-forward-sentance)
   (setq-local font-lock-defaults
 	      '(((":[^\n]*" . font-lock-preprocessor-face)
