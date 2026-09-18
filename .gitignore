@@ -1,2 +1,3 @@
 *.mid
 *.hex
+!/ref/*.hex
