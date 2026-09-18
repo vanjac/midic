@@ -103,7 +103,7 @@ Based on org-increase-number-at-point"
 (defvar midi-play-program
   (if (eq system-type 'windows-nt)
       (midi--path-from-here "play.cmd")
-    "fluidsynth"))
+    (midi--path-from-here "play.sh")))
 
 (defvar midi-play-buffer-name "*midi-play*")
 
