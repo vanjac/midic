@@ -6,7 +6,6 @@
 4D 54 72 6B # MTrk
 00 00 00 00
 00
-F0 0A 41 10 42 12 40 00 7F 00 41 F7 00 # GS Reset
 
 ## Kits
 C9 .. 00 00 # Standard
@@ -17,7 +16,7 @@ C9 .. 19 00 # TR-808
 C9 .. 20 00 # Jazz
 C9 .. 28 00 # Brush
 C9 .. 30 00 # Orchestra
-C9 .. 38 00 # SFX
+C9 .. 38 00 # SFX (GS)
 
 C9 .. 00 00
 ## Percussion Keys
