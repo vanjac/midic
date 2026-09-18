@@ -1,0 +1,87 @@
+# -*- tab-width: 15 -*-
+4D 54 68 64 # MThd
+00 00 00 06
+00 00 00 01 # Format 0
+00 60       # TPQN
+4D 54 72 6B # MTrk
+00 00 00 00
+00
+F0 0A 41 10 42 12 40 00 7F 00 41 F7 00 # GS Reset
+
+## Kits
+C9 .. 00 00 # Standard
+C9 .. 08 00 # Room
+C9 .. 10 00 # Power
+C9 .. 18 00 # Electronic
+C9 .. 19 00 # TR-808
+C9 .. 20 00 # Jazz
+C9 .. 28 00 # Brush
+C9 .. 30 00 # Orchestra
+C9 .. 38 00 # SFX
+
+C9 .. 00 00
+## Percussion Keys
+99 1B 7F 60 # High Q
+99 1C 7F 60 # Slap
+99 1D 7F 60 # Scratch Push
+99 1E 7F 60 # Scratch Pull
+99 1F 7F 60 # Sticks
+99 20 7F 60 # Square Click
+99 21 7F 60 # Metronome Click
+99 22 7F 60 # Metronome Bell
+99 23 7F 60 # Acoustic Bass Drum
+99 24 7F 60 # Electric Bass Drum
+99 25 7F 60 # Side Stick
+99 26 7F 60 # Acoustic Snare
+99 27 7F 60 # Hand Clap
+99 28 7F 60 # Electric Snare
+99 29 7F 60 # Low Floor Tom
+99 2A 7F 60 # Closed Hi-Hat
+99 2B 7F 60 # High Floor Tom
+99 2C 7F 60 # Pedal Hi-Hat
+99 2D 7F 60 # Low Tom
+99 2E 7F 60 # Open Hi-Hat
+99 2F 7F 60 # Low Mid Tom
+99 30 7F 60 # Hi-Mid Tom
+99 31 7F 60 # Crash Cymbal 1
+99 32 7F 60 # High Tom
+99 33 7F 60 # Ride Cymbal 1
+99 34 7F 60 # Chinese Cymbal
+99 35 7F 60 # Ride Bell
+99 36 7F 60 # Tambourine
+99 37 7F 60 # Splash Cymbal
+99 38 7F 60 # Cowbell
+99 39 7F 60 # Crash Cymbal 2
+99 3A 7F 60 # Vibraslap
+99 3B 7F 60 # Ride Cymbal 2
+99 3C 7F 60 # Hi Bongo
+99 3D 7F 60 # Low Bongo
+99 3E 7F 60 # Mute Hi Conga
+99 3F 7F 60 # Open Hi Conga
+99 40 7F 60 # Low Conga
+99 41 7F 60 # High Timbale
+99 42 7F 60 # Low Timbale
+99 43 7F 60 # High Agogo
+99 44 7F 60 # Low Agogo
+99 45 7F 60 # Cabasa
+99 46 7F 60 # Maracas
+99 47 7F 60 # Short Whistle
+99 48 7F 60 # Long Whistle
+99 49 7F 60 # Short Guiro
+99 4A 7F 60 # Long Guiro
+99 4B 7F 60 # Claves
+99 4C 7F 60 # Hi Wood Block
+99 4D 7F 60 # Low Wood Block
+99 4E 7F 60 # Mute Cuica
+99 4F 7F 60 # Open Cuica
+99 50 7F 60 # Mute Triangle
+99 51 7F 60 # Open Triangle
+99 52 7F 60 # Shaker
+99 53 7F 60 # Jingle Bell
+99 54 7F 60 # Belltree
+99 55 7F 60 # Castanets
+99 56 7F 60 # Mute Surdo
+99 57 7F 60 # Open Surdo
+
+>F0 05 7E 7F 09 01 F7 00 # GM Reset
+FF 2F 00
