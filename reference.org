@@ -26,7 +26,7 @@ For ease of parsing, limit delta times to 1 byte (=00= thru =7F=).
 
 *** Controllers
 
-- =Bx 00 vv= Bank Select (set /before/ program change)
+- =Bx 00 vv= Bank Select (requires GS mode; set /before/ program change)
 - =Bx 01 vv= Modulation (Vibrato)
 - =Bx 07 vv= Channel Volume
 - =Bx 0A vv= Channel Panning
@@ -116,6 +116,8 @@ Use channel =9=.
 ** Instruments
 
 https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
+
+Additional GS mode banks listed in superscript.
 
 Families:
 - =00= *Piano* /(Acoustic Grand^{08,10}, Bright Acoustic^{08}, Electric Grand^{08}, Honky-tonk^{08}, Rhodes^{08,10,18}, Chorused^{08,10}, Harpsichord^{08,10,18}, Clavinet)/
