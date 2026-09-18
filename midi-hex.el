@@ -157,8 +157,8 @@ Based on org-increase-number-at-point"
 (defun midi-all-sound-off ()
   "Send all-sound-off command for each channel."
   (interactive)
-  (dotimes (c 16)
-    (midi--send (format ">B%X7800\n" c))))
+  (midi--send (concat ">" (mapconcat (lambda (c) (format "B%X7800\n" c))
+				     (number-sequence 0 15)))))
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI-Hex files."
