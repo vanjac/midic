@@ -43,7 +43,7 @@ for line in args.input:
                         args.output.write(make_fluidsynth_cmd(ev).encode())
                     elif args.format == 'hex':
                         args.output.write((ev.hex() + '\n').encode())
-                    args.output.flush()
+            args.output.flush()
     except (IndexError, TypeError, ValueError):
         logging.exception('While parsing line: `%s`', line.rstrip())
         status = 1
