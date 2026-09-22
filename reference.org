@@ -24,6 +24,12 @@ For ease of parsing, limit delta times to 1 byte (=00= thru =7F=).
 - =F0 .. F7= System Exclusive
 - =FF .. ..= Meta Event
 
+*** Macros
+
+- =Kx kk vv= Sound Off + Note On
+- =Lx kk vv= Reset Controllers + Note On
+- =Nx kk vv= Notes Off + Note On
+
 *** Controllers
 
 - =Bx 00 vv= Bank Select (requires GS mode; set /before/ program change)

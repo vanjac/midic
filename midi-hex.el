@@ -169,7 +169,7 @@ Based on org-increase-number-at-point"
   (setq-local font-lock-defaults
 	      '(((":[^\n]*" . font-lock-preprocessor-face)
 		 ("\\b8[0-9a-fA-F]+\\b" . font-lock-constant-face)
-		 ("\\b9[0-9a-fA-F]+\\b" . font-lock-function-name-face)
+		 ("\\b[9k-rK-R][0-9a-fA-F]+\\b" . font-lock-function-name-face)
 		 ("\\b[aA][0-9a-fA-F]+\\b" . font-lock-warning-face)
 		 ("\\b[bB][0-9a-fA-F]+\\b" . font-lock-keyword-face)
 		 ("\\b[cC][0-9a-fA-F]+\\b" . font-lock-type-face)
@@ -177,6 +177,6 @@ Based on org-increase-number-at-point"
 		 ("\\b[eE][0-9a-fA-F]+\\b" . font-lock-variable-name-face)
 		 ("\\b[fF][0-9a-fA-F]+\\b" . font-lock-preprocessor-face)
 		 ("[<>*-/]" . 'bold)
-		 ("[g-zG-Z]" . 'error)))))
+		 ("[g-jG-Js-zS-Z]" . 'error)))))
 
 (provide 'midi-hex)

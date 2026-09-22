@@ -10,6 +10,8 @@ args = parser.parse_args()
 def parse_fields(hexstr, count='1', start='0', end='0'):
     return hexstr, int(count, 0), int(start, 0), int(end, 0)
 
+def sub_macro(m): return f'B{m[2]}7{ord(m[1].upper())-67:x}00009{m[2]}'
+
 def make_fluidsynth_cmd(b):
     chan = b[0] & 0xF
     match b[0] >> 4:
@@ -28,6 +30,7 @@ for line in args.input:
     f = re.sub(r'(^>|#.*|[*-/])', '', line).split(':')
     try:
         hexstr, count, start, end = parse_fields(*f)
+        hexstr = re.sub(r'(?i)([k-r])([0-9a-f])', sub_macro, hexstr)
         for i in range(count):
             val = int(i / count * end + (count-i) / count * start)
             b = bytes.fromhex(hexstr.replace('__', f'{val:02x}'))
