@@ -40,8 +40,6 @@ For ease of parsing, limit delta times to 1 byte (=00= thru =7F=).
 - =Bx 78 00= All Sound Off
 - =Bx 79 00= Reset All Controllers
 - =Bx 7B 00= All Notes Off
-- =Bx 7E 00= Mono
-- =Bx 7F 00= Poly
 
 https://en.wikipedia.org/wiki/General_MIDI#RPN
 
