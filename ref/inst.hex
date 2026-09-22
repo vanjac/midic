@@ -7,152 +7,151 @@
 00 00 00 00
 00
 
-B0 7E 00 00
 B0 00 00 00 #	              (Name)	(GS Banks)
 ## Piano
-C0 .. 00 00	90 3C 7F 60 # Acoustic Grand	08,10
-C0 .. 01 00	90 3C 7F 60 # Bright	08
-C0 .. 02 00	90 3C 7F 60 # Electric Grand	08
-C0 .. 03 00	90 3C 7F 60 # Honky-tonk	08
-C0 .. 04 00	90 3C 7F 60 # E. Piano 1	08,10,18
-C0 .. 05 00	90 3C 7F 60 # E. Piano 2	08,10
-C0 .. 06 00	90 3C 7F 60 # Harpsichord	08,10,18
-C0 .. 07 00	90 3C 7F 60 # Clavi
+C0 .. 00 00	N0 3C 7F 60 # Acoustic Grand	08,10
+C0 .. 01 00	N0 3C 7F 60 # Bright	08
+C0 .. 02 00	N0 3C 7F 60 # Electric Grand	08
+C0 .. 03 00	N0 3C 7F 60 # Honky-tonk	08
+C0 .. 04 00	N0 3C 7F 60 # E. Piano 1	08,10,18
+C0 .. 05 00	N0 3C 7F 60 # E. Piano 2	08,10
+C0 .. 06 00	N0 3C 7F 60 # Harpsichord	08,10,18
+C0 .. 07 00	N0 3C 7F 60 # Clavi
 ## Chromatic Percussion
-C0 .. 08 00	90 3C 7F 60 # Celesta
-C0 .. 09 00	90 3C 7F 60 # Glockenspiel
-C0 .. 0A 00	90 3C 7F 60 # Music Box
-C0 .. 0B 00	90 3C 7F 60 # Vibraphone	08
-C0 .. 0C 00	90 3C 7F 60 # Marimba	08
-C0 .. 0D 00	90 3C 7F 60 # Xylophone
-C0 .. 0E 00	90 3C 7F 60 # Tubular Bells	08,09
-C0 .. 0F 00	90 3C 7F 60 # Dulcimer
+C0 .. 08 00	N0 3C 7F 60 # Celesta
+C0 .. 09 00	N0 3C 7F 60 # Glockenspiel
+C0 .. 0A 00	N0 3C 7F 60 # Music Box
+C0 .. 0B 00	N0 3C 7F 60 # Vibraphone	08
+C0 .. 0C 00	N0 3C 7F 60 # Marimba	08
+C0 .. 0D 00	N0 3C 7F 60 # Xylophone
+C0 .. 0E 00	N0 3C 7F 60 # Tubular Bells	08,09
+C0 .. 0F 00	N0 3C 7F 60 # Dulcimer
 ## Organ
-C0 .. 10 00	90 3C 7F 60 # Drawbar Organ	08,10,20
-C0 .. 11 00	90 3C 7F 60 # Percussive	08,20
-C0 .. 12 00	90 3C 7F 60 # Rock Organ
-C0 .. 13 00	90 3C 7F 60 # Church Organ	08,10
-C0 .. 14 00	90 3C 7F 60 # Reed Organ
-C0 .. 15 00	90 3C 7F 60 # Accordion	08
-C0 .. 16 00	90 3C 7F 60 # Harmonica
-C0 .. 17 00	90 3C 7F 60 # Tango Accord.
+C0 .. 10 00	N0 3C 7F 60 # Drawbar Organ	08,10,20
+C0 .. 11 00	N0 3C 7F 60 # Percussive	08,20
+C0 .. 12 00	N0 3C 7F 60 # Rock Organ
+C0 .. 13 00	N0 3C 7F 60 # Church Organ	08,10
+C0 .. 14 00	N0 3C 7F 60 # Reed Organ
+C0 .. 15 00	N0 3C 7F 60 # Accordion	08
+C0 .. 16 00	N0 3C 7F 60 # Harmonica
+C0 .. 17 00	N0 3C 7F 60 # Tango Accord.
 ## Guitar
-C0 .. 18 00	90 3C 7F 60 # Acoustic Nylon	08,10,20
-C0 .. 19 00	90 3C 7F 60 # Acoustic Steel	08,10
-C0 .. 1A 00	90 3C 7F 60 # Electric Jazz	08
-C0 .. 1B 00	90 3C 7F 60 # Electric Clean	08
-C0 .. 1C 00	90 3C 7F 60 # Electric Muted	08,10
-C0 .. 1D 00	90 3C 7F 60 # Overdriven
-C0 .. 1E 00	90 3C 7F 60 # Distortion	08
-C0 .. 1F 00	90 3C 7F 60 # Harmonics	08
+C0 .. 18 00	N0 3C 7F 60 # Acoustic Nylon	08,10,20
+C0 .. 19 00	N0 3C 7F 60 # Acoustic Steel	08,10
+C0 .. 1A 00	N0 3C 7F 60 # Electric Jazz	08
+C0 .. 1B 00	N0 3C 7F 60 # Electric Clean	08
+C0 .. 1C 00	N0 3C 7F 60 # Electric Muted	08,10
+C0 .. 1D 00	N0 3C 7F 60 # Overdriven
+C0 .. 1E 00	N0 3C 7F 60 # Distortion	08
+C0 .. 1F 00	N0 3C 7F 60 # Harmonics	08
 ## Bass
-C0 .. 20 00	90 3C 7F 60 # Acoustic Bass
-C0 .. 21 00	90 3C 7F 60 # Fingered Elec.
-C0 .. 22 00	90 3C 7F 60 # Plucked Elec.
-C0 .. 23 00	90 3C 7F 60 # Fretless Bass
-C0 .. 24 00	90 3C 7F 60 # Slap Bass 1
-C0 .. 25 00	90 3C 7F 60 # Slap Bass 2
-C0 .. 26 00	90 3C 7F 60 # Synth Bass 1	01,08
-C0 .. 27 00	90 3C 7F 60 # Synth Bass 2	08,10
+C0 .. 20 00	N0 3C 7F 60 # Acoustic Bass
+C0 .. 21 00	N0 3C 7F 60 # Fingered Elec.
+C0 .. 22 00	N0 3C 7F 60 # Plucked Elec.
+C0 .. 23 00	N0 3C 7F 60 # Fretless Bass
+C0 .. 24 00	N0 3C 7F 60 # Slap Bass 1
+C0 .. 25 00	N0 3C 7F 60 # Slap Bass 2
+C0 .. 26 00	N0 3C 7F 60 # Synth Bass 1	01,08
+C0 .. 27 00	N0 3C 7F 60 # Synth Bass 2	08,10
 ## Strings
-C0 .. 28 00	90 3C 7F 60 # Violin	08
-C0 .. 29 00	90 3C 7F 60 # Viola
-C0 .. 2A 00	90 3C 7F 60 # Cello
-C0 .. 2B 00	90 3C 7F 60 # Contrabass
-C0 .. 2C 00	90 3C 7F 60 # Tremolo
-C0 .. 2D 00	90 3C 7F 60 # Pizzicato
-C0 .. 2E 00	90 3C 7F 60 # Orch. Harp
-C0 .. 2F 00	90 3C 7F 60 # Timpani
+C0 .. 28 00	N0 3C 7F 60 # Violin	08
+C0 .. 29 00	N0 3C 7F 60 # Viola
+C0 .. 2A 00	N0 3C 7F 60 # Cello
+C0 .. 2B 00	N0 3C 7F 60 # Contrabass
+C0 .. 2C 00	N0 3C 7F 60 # Tremolo
+C0 .. 2D 00	N0 3C 7F 60 # Pizzicato
+C0 .. 2E 00	N0 3C 7F 60 # Orch. Harp
+C0 .. 2F 00	N0 3C 7F 60 # Timpani
 ## Ensemble
-C0 .. 30 00	90 3C 7F 60 # Ensemble 1	08
-C0 .. 31 00	90 3C 7F 60 # Ensemble 2
-C0 .. 32 00	90 3C 7F 60 # Synth String 1	08
-C0 .. 33 00	90 3C 7F 60 # Synth String 2
-C0 .. 34 00	90 3C 7F 60 # Choir Aahs	20
-C0 .. 35 00	90 3C 7F 60 # Voice Oohs
-C0 .. 36 00	90 3C 7F 60 # Synth Voice
-C0 .. 37 00	90 3C 7F 60 # Orchestra Hit
+C0 .. 30 00	N0 3C 7F 60 # Ensemble 1	08
+C0 .. 31 00	N0 3C 7F 60 # Ensemble 2
+C0 .. 32 00	N0 3C 7F 60 # Synth String 1	08
+C0 .. 33 00	N0 3C 7F 60 # Synth String 2
+C0 .. 34 00	N0 3C 7F 60 # Choir Aahs	20
+C0 .. 35 00	N0 3C 7F 60 # Voice Oohs
+C0 .. 36 00	N0 3C 7F 60 # Synth Voice
+C0 .. 37 00	N0 3C 7F 60 # Orchestra Hit
 ## Brass
-C0 .. 38 00	90 3C 7F 60 # Trumpet
-C0 .. 39 00	90 3C 7F 60 # Trombone	01
-C0 .. 3A 00	90 3C 7F 60 # Tuba
-C0 .. 3B 00	90 3C 7F 60 # Muted Trumpet
-C0 .. 3C 00	90 3C 7F 60 # French Horn	01
-C0 .. 3D 00	90 3C 7F 60 # Brass Section	08
-C0 .. 3E 00	90 3C 7F 60 # Synth Brass 1	08,10
-C0 .. 3F 00	90 3C 7F 60 # Synth Brass 2	08,10
+C0 .. 38 00	N0 3C 7F 60 # Trumpet
+C0 .. 39 00	N0 3C 7F 60 # Trombone	01
+C0 .. 3A 00	N0 3C 7F 60 # Tuba
+C0 .. 3B 00	N0 3C 7F 60 # Muted Trumpet
+C0 .. 3C 00	N0 3C 7F 60 # French Horn	01
+C0 .. 3D 00	N0 3C 7F 60 # Brass Section	08
+C0 .. 3E 00	N0 3C 7F 60 # Synth Brass 1	08,10
+C0 .. 3F 00	N0 3C 7F 60 # Synth Brass 2	08,10
 ## Reed
-C0 .. 40 00	90 3C 7F 60 # Soprano Sax
-C0 .. 41 00	90 3C 7F 60 # Alto Sax
-C0 .. 42 00	90 3C 7F 60 # Tenor Sax
-C0 .. 43 00	90 3C 7F 60 # Baritone Sax
-C0 .. 44 00	90 3C 7F 60 # Oboe
-C0 .. 45 00	90 3C 7F 60 # English Horn
-C0 .. 46 00	90 3C 7F 60 # Bassoon
-C0 .. 47 00	90 3C 7F 60 # Clarinet
+C0 .. 40 00	N0 3C 7F 60 # Soprano Sax
+C0 .. 41 00	N0 3C 7F 60 # Alto Sax
+C0 .. 42 00	N0 3C 7F 60 # Tenor Sax
+C0 .. 43 00	N0 3C 7F 60 # Baritone Sax
+C0 .. 44 00	N0 3C 7F 60 # Oboe
+C0 .. 45 00	N0 3C 7F 60 # English Horn
+C0 .. 46 00	N0 3C 7F 60 # Bassoon
+C0 .. 47 00	N0 3C 7F 60 # Clarinet
 ## Pipe
-C0 .. 48 00	90 3C 7F 60 # Piccolo
-C0 .. 49 00	90 3C 7F 60 # Flute
-C0 .. 4A 00	90 3C 7F 60 # Recorder
-C0 .. 4B 00	90 3C 7F 60 # Pan Flute
-C0 .. 4C 00	90 3C 7F 60 # Blown Bottle
-C0 .. 4D 00	90 3C 7F 60 # Shakuhachi
-C0 .. 4E 00	90 3C 7F 60 # Whistle
-C0 .. 4F 00	90 3C 7F 60 # Ocarina
+C0 .. 48 00	N0 3C 7F 60 # Piccolo
+C0 .. 49 00	N0 3C 7F 60 # Flute
+C0 .. 4A 00	N0 3C 7F 60 # Recorder
+C0 .. 4B 00	N0 3C 7F 60 # Pan Flute
+C0 .. 4C 00	N0 3C 7F 60 # Blown Bottle
+C0 .. 4D 00	N0 3C 7F 60 # Shakuhachi
+C0 .. 4E 00	N0 3C 7F 60 # Whistle
+C0 .. 4F 00	N0 3C 7F 60 # Ocarina
 ## Synth Lead
-C0 .. 50 00	90 3C 7F 60 # Square	01,08
-C0 .. 51 00	90 3C 7F 60 # Sawtooth	01,08
-C0 .. 52 00	90 3C 7F 60 # Calliope
-C0 .. 53 00	90 3C 7F 60 # Chiff
-C0 .. 54 00	90 3C 7F 60 # Charang
-C0 .. 55 00	90 3C 7F 60 # Voice
-C0 .. 56 00	90 3C 7F 60 # Fifths
-C0 .. 57 00	90 3C 7F 60 # Bass + Lead
+C0 .. 50 00	N0 3C 7F 60 # Square	01,08
+C0 .. 51 00	N0 3C 7F 60 # Sawtooth	01,08
+C0 .. 52 00	N0 3C 7F 60 # Calliope
+C0 .. 53 00	N0 3C 7F 60 # Chiff
+C0 .. 54 00	N0 3C 7F 60 # Charang
+C0 .. 55 00	N0 3C 7F 60 # Voice
+C0 .. 56 00	N0 3C 7F 60 # Fifths
+C0 .. 57 00	N0 3C 7F 60 # Bass + Lead
 ## Synth Pad
-C0 .. 58 00	90 3C 7F 60 # New Age
-C0 .. 59 00	90 3C 7F 60 # Warm
-C0 .. 5A 00	90 3C 7F 60 # Polysynth
-C0 .. 5B 00	90 3C 7F 60 # Choir
-C0 .. 5C 00	90 3C 7F 60 # Bowed
-C0 .. 5D 00	90 3C 7F 60 # Metallic
-C0 .. 5E 00	90 3C 7F 60 # Halo
-C0 .. 5F 00	90 3C 7F 60 # Sweep
+C0 .. 58 00	N0 3C 7F 60 # New Age
+C0 .. 59 00	N0 3C 7F 60 # Warm
+C0 .. 5A 00	N0 3C 7F 60 # Polysynth
+C0 .. 5B 00	N0 3C 7F 60 # Choir
+C0 .. 5C 00	N0 3C 7F 60 # Bowed
+C0 .. 5D 00	N0 3C 7F 60 # Metallic
+C0 .. 5E 00	N0 3C 7F 60 # Halo
+C0 .. 5F 00	N0 3C 7F 60 # Sweep
 ## Synth Effects
-C0 .. 60 00	90 3C 7F 60 # Rain
-C0 .. 61 00	90 3C 7F 60 # Soundtrack
-C0 .. 62 00	90 3C 7F 60 # Crystal	01
-C0 .. 63 00	90 3C 7F 60 # Atmosphere
-C0 .. 64 00	90 3C 7F 60 # Brightness
-C0 .. 65 00	90 3C 7F 60 # Goblins
-C0 .. 66 00	90 3C 7F 60 # Echoes	01,02
-C0 .. 67 00	90 3C 7F 60 # Sci-Fi
+C0 .. 60 00	N0 3C 7F 60 # Rain
+C0 .. 61 00	N0 3C 7F 60 # Soundtrack
+C0 .. 62 00	N0 3C 7F 60 # Crystal	01
+C0 .. 63 00	N0 3C 7F 60 # Atmosphere
+C0 .. 64 00	N0 3C 7F 60 # Brightness
+C0 .. 65 00	N0 3C 7F 60 # Goblins
+C0 .. 66 00	N0 3C 7F 60 # Echoes	01,02
+C0 .. 67 00	N0 3C 7F 60 # Sci-Fi
 ## Ethnic
-C0 .. 68 00	90 3C 7F 60 # Sitar	01
-C0 .. 69 00	90 3C 7F 60 # Banjo
-C0 .. 6A 00	90 3C 7F 60 # Shamisen
-C0 .. 6B 00	90 3C 7F 60 # Koto	08
-C0 .. 6C 00	90 3C 7F 60 # Kalimba
-C0 .. 6D 00	90 3C 7F 60 # Bagpipe
-C0 .. 6E 00	90 3C 7F 60 # Fiddle
-C0 .. 6F 00	90 3C 7F 60 # Shanai
+C0 .. 68 00	N0 3C 7F 60 # Sitar	01
+C0 .. 69 00	N0 3C 7F 60 # Banjo
+C0 .. 6A 00	N0 3C 7F 60 # Shamisen
+C0 .. 6B 00	N0 3C 7F 60 # Koto	08
+C0 .. 6C 00	N0 3C 7F 60 # Kalimba
+C0 .. 6D 00	N0 3C 7F 60 # Bagpipe
+C0 .. 6E 00	N0 3C 7F 60 # Fiddle
+C0 .. 6F 00	N0 3C 7F 60 # Shanai
 ## Percussive
-C0 .. 70 00	90 3C 7F 60 # Tinkle Bell
-C0 .. 71 00	90 3C 7F 60 # Agogo
-C0 .. 72 00	90 3C 7F 60 # Steel Drums
-C0 .. 73 00	90 3C 7F 60 # Woodblock	08
-C0 .. 74 00	90 3C 7F 60 # Taiko Drum	08
-C0 .. 75 00	90 3C 7F 60 # Melodic Tom	08
-C0 .. 76 00	90 3C 7F 60 # Synth Drum	08,09
-C0 .. 77 00	90 3C 7F 60 # Reverse Cymbal
+C0 .. 70 00	N0 3C 7F 60 # Tinkle Bell
+C0 .. 71 00	N0 3C 7F 60 # Agogo
+C0 .. 72 00	N0 3C 7F 60 # Steel Drums
+C0 .. 73 00	N0 3C 7F 60 # Woodblock	08
+C0 .. 74 00	N0 3C 7F 60 # Taiko Drum	08
+C0 .. 75 00	N0 3C 7F 60 # Melodic Tom	08
+C0 .. 76 00	N0 3C 7F 60 # Synth Drum	08,09
+C0 .. 77 00	N0 3C 7F 60 # Reverse Cymbal
 ## Sound Effects
-C0 .. 78 00	90 3C 7F 60 # Guitar Fret	01,02
-C0 .. 79 00	90 3C 7F 60 # Breath	01
-C0 .. 7A 00	90 3C 7F 60 # Seashore	01,02,03,04,05
-C0 .. 7B 00	90 3C 7F 60 # Bird Tweet	01,02,03
-C0 .. 7C 00	90 3C 7F 60 # Telephone Ring	01,02,03,04,05
-C0 .. 7D 00	90 3C 7F 60 # Helicopter	01,02,03,04,05,06,07,08,09
-C0 .. 7E 00	90 3C 7F 60 # Applause	01,02,03,04,05
-C0 .. 7F 00	90 3C 7F 60 # Gunshot	01,02,03
+C0 .. 78 00	N0 3C 7F 60 # Guitar Fret	01,02
+C0 .. 79 00	N0 3C 7F 60 # Breath	01
+C0 .. 7A 00	N0 3C 7F 60 # Seashore	01,02,03,04,05
+C0 .. 7B 00	N0 3C 7F 60 # Bird Tweet	01,02,03
+C0 .. 7C 00	N0 3C 7F 60 # Telephone Ring	01,02,03,04,05
+C0 .. 7D 00	N0 3C 7F 60 # Helicopter	01,02,03,04,05,06,07,08,09
+C0 .. 7E 00	N0 3C 7F 60 # Applause	01,02,03,04,05
+C0 .. 7F 00	N0 3C 7F 60 # Gunshot	01,02,03
 B0 78 00 00
 
 >F0 05 7E 7F 09 01 F7 00 # GM Reset
