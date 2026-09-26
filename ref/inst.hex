@@ -6,6 +6,7 @@
 4D 54 72 6B # MTrk
 00 00 00 00
 00
+F0 05 7E 7F 09 01 F7 00 # GM
 
 B0 00 00 00 #	              (Name)	(GS Banks)
 ## Piano
@@ -154,5 +155,5 @@ C0 .. 7E 00	N0 3C 7F 60 # Applause	01,02,03,04,05
 C0 .. 7F 00	N0 3C 7F 60 # Gunshot	01,02,03
 	B0 78 00 00
 
->F0 05 7E 7F 09 01 F7 00 # GM Reset
+>F0 05 7E 7F 09 01 F7 00 # GM
 FF 2F 00

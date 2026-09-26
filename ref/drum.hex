@@ -6,6 +6,7 @@
 4D 54 72 6B # MTrk
 00 00 00 00
 00
+F0 05 7E 7F 09 01 F7 00 # GM
 
 ## Kits
 C9 .. 00 00 # Standard
@@ -82,5 +83,5 @@ C9 .. 00 00
 99 56 7F 60 # Mute Surdo
 99 57 7F 60 # Open Surdo
 
->F0 05 7E 7F 09 01 F7 00 # GM Reset
+>F0 05 7E 7F 09 01 F7 00 # GM
 FF 2F 00
