@@ -60,6 +60,7 @@ https://en.wikipedia.org/wiki/General_MIDI#RPN
 
 - =F0 05 7E 7F 09 01 F7= General MIDI Mode
 - =F0 0A 41 10 42 12 40 00 7F 00 41 F7= Roland GS Mode
+- =F0 0A 41 10 42 12 40 1A 15 01 10 F7= Setup second drum channel =A= (requires GS mode)
 
 ** Keys
 
