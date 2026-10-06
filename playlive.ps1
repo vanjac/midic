@@ -16,5 +16,6 @@ $port = $portTask.Result
 python $PSScriptRoot\midic.py | % {
 	$bytes = [bigint]::Parse($_, 'HexNumber').ToByteArray()
 	[array]::Reverse($bytes)
+	$bytes = $bytes | % {if ($_ -eq 0xF7) {0} else {$_}} # strange bug
 	$port.SendBuffer($BufExt::AsBuffer($bytes))
 }

@@ -40,8 +40,9 @@ for line in args.input:
             evidx = 0
             for j in range(1, len(b) + 1):
                 if j == len(b) or ((b[j] & 0x80) != 0 and (b[evidx] & 0xF0) != 0xF0):
-                    ev = b[evidx:j]
+                    ev = bytearray(b[evidx:j])
                     evidx = j
+                    if ev[0] == 0xF0: del ev[1]
                     if args.format == 'fluidsynth':
                         args.output.write(make_fluidsynth_cmd(ev).encode())
                     elif args.format == 'hex':
