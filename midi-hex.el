@@ -2,6 +2,7 @@
 
 (require 'compile)
 (require 'python)
+(require 'thingatpt)
 
 (defvar midi-hex-mode-syntax-table
   (let ((table (make-syntax-table)))
@@ -13,8 +14,8 @@
   "C-c TAB" #'midi-cleanup
   "M-<right>" #'midi-next-tab-stop
   "M-<left>" #'midi-prev-tab-stop
-  "C-M-<right>" #'midi-increase-hex-at-point
-  "C-M-<left>" #'midi-decrease-hex-at-point
+  "C-M-<right>" #'midi-increase-hex-digit
+  "C-M-<left>" #'midi-decrease-hex-digit
   "C-c C-p" #'midi-build
   "C-c C-r" #'midi-comint
   "C-c C-o" #'midi-all-sound-off
@@ -52,26 +53,45 @@
 	  (backward-char))
       (skip-chars-backward "^\t\n"))))
 
-(defun midi-increase-hex-at-point (&optional inc)
-  "Increment hex value at point, clamped to the range of the available digits.
-Based on org-increase-number-at-point"
-  (interactive "p")
-  (let* ((pos (point))
-	 (beg (skip-chars-backward "0-9a-fA-F"))
-	 (end (skip-chars-forward "0-9a-fA-F"))
-	 (num-str (buffer-substring-no-properties (+ pos beg) (+ pos beg end)))
-	 (num (string-to-number num-str 16))
-	 (len (length num-str))
-	 (new-num (max 0 (min (- (expt 16 len) 1) (+ num (or inc 1)))))
-	 (new-num-str (format (concat "%0" (number-to-string len) "X") new-num)))
-    (when (> len 0)
-      (delete-region (+ pos beg) (+ pos beg end))
-      (insert new-num-str))))
+(defun midi--hex-char-value (c)
+  (cond
+   ((<= ?0 c ?9) (- c ?0))
+   ((<= ?a c ?f) (+ 10 (- c ?a)))
+   ((<= ?A c ?F) (+ 10 (- c ?A)))))
 
-(defun midi-decrease-hex-at-point (&optional inc)
-  "Decrement hex value at point."
+(defun midi--hex-char (v)
+  (cond
+   ((<= 0 v 9) (+ v ?0))
+   ((<= 10 v 15) (+ ?A (- v 10)))))
+
+(defun midi--adjust-hex-digit (inc)
+  (when-let* ((c (char-after))
+	      (val (midi--hex-char-value c))
+	      (inc-val (+ val inc))
+	      (wrapped-val (if (<= 0 inc-val 15)
+			       inc-val
+			     (backward-char)
+			     (midi--adjust-hex-digit (ash inc-val -4))
+			     (forward-char)
+			     (mod inc-val 16)))
+	      (nc (midi--hex-char wrapped-val)))
+    (delete-char 1)
+    (insert-char nc)
+    (backward-char)))
+
+(defun midi-increase-hex-digit (&optional inc)
+  "Increment hex digit at point, carrying to the next digit(s)."
   (interactive "p")
-  (midi-increase-hex-at-point (- (or inc 1))))
+  (if (not (memql (char-after) '(?\s ?\t ?\n)))
+      (midi--adjust-hex-digit inc)
+    (backward-char)
+    (midi--adjust-hex-digit inc)
+    (forward-char)))
+
+(defun midi-decrease-hex-digit (&optional inc)
+  "Decrement hex digit at point, carrying to the next digit(s)."
+  (interactive "p")
+  (midi-increase-hex-digit (- (or inc 1))))
 
 (defun midi--path-from-here (path)
   (concat (file-name-directory (or load-file-name (buffer-file-name))) path))
