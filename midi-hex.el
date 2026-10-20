@@ -89,7 +89,7 @@
     (forward-char)))
 
 (defun midi-decrease-hex-digit (&optional inc)
-  "Decrement hex digit at point, carrying to the next digit(s)."
+  "Decrement hex digit at point, borrowing from the next digit(s)."
   (interactive "p")
   (midi-increase-hex-digit (- (or inc 1))))
 
