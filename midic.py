@@ -4,7 +4,8 @@ import argparse, logging, os, re, sys
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input', default='-', type=argparse.FileType('r'))
 parser.add_argument('-o', '--output', default='-', type=argparse.FileType('wb'))
-parser.add_argument('-f', '--format', default='hex', choices=['hex', 'smf', 'fluidsynth'])
+parser.add_argument('-f', '--format', default='hex', choices=['hex', 'smf'])
+parser.add_argument('-p', '--portname')
 args = parser.parse_args()
 
 def parse_fields(hexstr, count='1', start='0', end='0'):
@@ -12,15 +13,16 @@ def parse_fields(hexstr, count='1', start='0', end='0'):
 
 def sub_macro(m): return f'B{m[2]}7{ord(m[1].upper())-67:x}00009{m[2]}'
 
-def make_fluidsynth_cmd(b):
-    chan = b[0] & 0xF
-    match b[0] >> 4:
-        case 0x8: return f'noteoff {chan} {b[1]}\n'
-        case 0x9: return f'noteon {chan} {b[1]} {b[2]}\n'
-        case 0xB: return f'cc {chan} {b[1]} {b[2]}\n'
-        case 0xC: return f'prog {chan} {b[1]}\n'
-        case 0xE: return f'pitch_bend {chan} {b[1] + 128 * b[2]}\n'
-        case _: return ''
+if args.portname:
+    import fnmatch, rtmidi
+    midiout = rtmidi.MidiOut()
+    ports = midiout.get_ports()
+    print('Ports:\n  ' + '\n  '.join(ports))
+    pattern = args.portname.lower()
+    portidx = next((i for i,p in enumerate(ports) if fnmatch.fnmatch(p.lower(), pattern)), None)
+    if portidx is None: sys.exit('No matching port')
+    print('Selected:', ports[portidx])
+    midiout.open_port(portidx)
 
 status = 0
 skip = False
@@ -40,11 +42,12 @@ for line in args.input:
             evidx = 0
             for j in range(1, len(b) + 1):
                 if j == len(b) or ((b[j] & 0x80) != 0 and (b[evidx] & 0xF0) != 0xF0):
-                    ev = bytearray(b[evidx:j])
+                    ev = bytearray(b[evidx:j-1])
                     evidx = j
+                    if len(ev) == 0: continue
                     if ev[0] == 0xF0: del ev[1]
-                    if args.format == 'fluidsynth':
-                        args.output.write(make_fluidsynth_cmd(ev).encode())
+                    if args.portname:
+                        midiout.send_message(ev)
                     elif args.format == 'hex':
                         args.output.write((ev.hex() + '\n').encode())
             args.output.flush()

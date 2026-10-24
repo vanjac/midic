@@ -177,7 +177,7 @@
 (defun midi-all-sound-off ()
   "Send all-sound-off command for each channel."
   (interactive)
-  (midi--send (concat ">" (mapconcat (lambda (c) (format "B%X7800\n" c))
+  (midi--send (concat ">" (mapconcat (lambda (c) (format "B%X780000\n" c))
 				     (number-sequence 0 15)))))
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
