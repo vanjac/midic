@@ -107,7 +107,7 @@
   (save-buffer)
   (let* ((infile (buffer-file-name))
 	 (outfile (file-name-with-extension infile "mid"))
-	 (cmd (format "%s %s -f smf -i %s -o %s"
+	 (cmd (format "%s %s -i %s -o %s"
 		      (shell-quote-argument python-interpreter)
 		      (shell-quote-argument midi-build-script)
 		      (shell-quote-argument infile)

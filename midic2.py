@@ -269,7 +269,7 @@ def main() -> str | None:
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-i', '--input', default='-', type=argparse.FileType('r'))
 	parser.add_argument('-o', '--output', default='-', type=argparse.FileType('wb'))
-	parser.add_argument('-f', '--format', default='hex', choices=['hex', 'event', 'smf', 'port'])
+	parser.add_argument('-f', '--format', default='smf', choices=['hex', 'smf', 'event', 'port'])
 	parser.add_argument('-p', '--portname', default='*')
 	args = parser.parse_args()
 	if args.format == 'smf' and not args.output.seekable():
