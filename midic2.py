@@ -2,9 +2,9 @@
 import argparse, re, os, sys
 from collections.abc import Sequence
 from dataclasses import dataclass, field
-from enum import StrEnum
+from enum import Enum
 
-class MidiStandard(StrEnum):
+class MidiStandard(Enum):
 	NONE = 'OFF'
 	GM   = 'GM'
 	GM2  = 'GM2'
@@ -228,10 +228,10 @@ def process_line(args: argparse.Namespace, state: State, line: str):
 			write_header(args, tpqn)
 		case 'mode':
 			validate_cmd_fields(cmd, fields, 2)
-			name = fields[1].upper()
-			if not name in MidiStandard:
+			try:
+				state.standard = MidiStandard(fields[1].upper())
+			except ValueError:
 				raise ParseError(f'Unknown standard name: {fields[1]}')
-			state.standard = MidiStandard(name)
 			write_reset_message(args, state)
 			for col in state.columns:
 				col.held_key = -1
