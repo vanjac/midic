@@ -97,7 +97,7 @@
   (concat (file-name-directory (or load-file-name (buffer-file-name))) path))
 
 (defvar midi-build-script
-  (midi--path-from-here "midic.py"))
+  (midi--path-from-here "midic2.py"))
 
 (defun midi-build (no-play)
   "Build and (optionally) play a MIDI file from MIDI-Hex"
@@ -177,26 +177,15 @@
 (defun midi-all-sound-off ()
   "Send all-sound-off command for each channel."
   (interactive)
-  (midi--send (concat ">" (mapconcat (lambda (c) (format "B%X780000\n" c))
-				     (number-sequence 0 15)))))
+  (midi--send ">soff\n"))
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI-Hex files."
   (setq-local comment-start "# ")
   (setq-local truncate-lines t)
-  (setq-local fill-column 300)
+  (setq-local fill-column 256)
   (setq-local forward-sentence-function #'midi-forward-sentance)
   (setq-local font-lock-defaults
-	      '(((":[^\n]*" . font-lock-preprocessor-face)
-		 ("\\b8[0-9a-fA-F]+\\b" . font-lock-constant-face)
-		 ("\\b[9k-rK-R][0-9a-fA-F]+\\b" . font-lock-function-name-face)
-		 ("\\b[aA][0-9a-fA-F]+\\b" . font-lock-warning-face)
-		 ("\\b[bB][0-9a-fA-F]+\\b" . font-lock-keyword-face)
-		 ("\\b[cC][0-9a-fA-F]+\\b" . font-lock-type-face)
-		 ("\\b[dD][0-9a-fA-F]+\\b" . font-lock-warning-face)
-		 ("\\b[eE][0-9a-fA-F]+\\b" . font-lock-variable-name-face)
-		 ("\\b[fF][0-9a-fA-F]+\\b" . font-lock-preprocessor-face)
-		 ("[<>*-/]" . 'bold)
-		 ("[g-jG-Js-zS-Z]" . 'error)))))
+	      '((("[<>=-]" . 'bold)))))
 
 (provide 'midi-hex)

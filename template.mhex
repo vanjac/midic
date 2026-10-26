@@ -1,0 +1,15 @@
+# -*- tab-width: 8; -*-
+tpqn	60
+mode	GM
+
+==		S 0030
+		S 0030
+--		S 0030
+		S 0030
+--		S 0030
+		S 0030
+--		S 0030
+		S 0030
+
+>mode	GM
+stop

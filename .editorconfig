@@ -2,9 +2,17 @@
 
 root = true
 
-[*.hex]
+[*]
 charset = utf-8
+
+[*.mhex]
 indent_style = tab
-indent_size = 15
+indent_size = 8
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.py]
+indent_style = tab
+indent_size = tab
 insert_final_newline = true
 trim_trailing_whitespace = true

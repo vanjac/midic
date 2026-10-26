@@ -13,7 +13,7 @@ $portTask = $asTaskMethod.MakeGenericMethod($MidiSynth).Invoke($null, @($portAsy
 $portTask.Wait()
 $port = $portTask.Result
 
-python $PSScriptRoot\midic.py | % {
+python $PSScriptRoot\midic2.py -f event | % {
 	$bytes = [bigint]::Parse($_, 'HexNumber').ToByteArray()
 	[array]::Reverse($bytes)
 	$bytes = $bytes | % {if ($_ -eq 0xF7) {0} else {$_}} # strange bug

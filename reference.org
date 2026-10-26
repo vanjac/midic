@@ -1,66 +1,61 @@
-* SMF Reference
+* MIDI-Hex Reference
 
-https://midimusic.github.io/tech/midispec.html
+** Syntax
 
-https://battleofthebits.com/lyceum/View/midi%20(format)
-
-** Format 0 File Structure
-
-- MThd header (14 bytes)
-- MTrk header (8 bytes)
-- For each event:
-  - Delta time (1+ bytes, variable-length quantity)
-  - Event data
-
-For ease of parsing, limit delta times to 1 byte (=00= thru =7F=).
+- =#= Line comment
+- =<= Playback skip
+- =>= Playback resume
+- === Major row highlight
+- =-= Minor row highlight
 
 ** Events
 
-- =8x kk vv= Note Off
-- =9x kk vv= Note On
-- =Bx cc vv= Control Change
-- =Cx    pp= Program Change
-- =Ex ll hh= Pitch Wheel (center: =00 40=)
-- =F0 .. F7= System Exclusive
-- =FF .. ..= Meta Event
-
-*** Macros
-
-- =Kx kk vv= Sound Off + Note On
-- =Lx kk vv= Reset Controllers + Note On
-- =Nx kk vv= Notes Off + Note On
+- =T iiif= Tempo (12.4 bit BPM)
+- =S tt00= Delay ticks
+- =M cm00= Set column MIDI channel + mute state
+- =C bbpp= Program change
+- =K kkvv= Note on
+- =R kkvv= Note off
+- =N kkvv= Prev Note off + Note on
+- =L kkvv= Note on + Prev Note off ("legato")
+- =A kkpp= Key pressure (key = =80= for channel pressure)
+- =B ccvv= Control/RPN change
+- =E vvvv= Pitch wheel
 
 *** Controllers
 
-- =Bx 00 vv= Bank Select (requires GS mode; set /before/ program change)
-- =Bx 01 vv= Modulation (Vibrato)
-- =Bx 07 vv= Channel Volume
-- =Bx 0A vv= Channel Panning
-- =Bx 0B vv= Expression
-- =Bx 78 00= All Sound Off
-- =Bx 79 00= Reset All Controllers
-- =Bx 7B 00= All Notes Off
+- =B 00vv= Bank Select (requires GS mode; set /before/ program change)
+- =B 01vv= Modulation (Vibrato)
+- =B 07vv= Channel Volume
+- =B 0Avv= Channel Panning
+- =B 0Bvv= Expression
+- =B 7800= All Sound Off
+- =B 7900= Reset All Controllers
+- =B 7B00= All Notes Off
+- =B 80vv= Pitch bend range
+- =B 81vv= Fine tune
+- =B 82vv= Coarse tune
 
-https://en.wikipedia.org/wiki/General_MIDI#RPN
+** Meta Commands
 
-- =Bx 64 vv= RPN Low
-  - =00= Pitch bend range
-  - =01= Fine tune
-  - =02= Coarse tune
-- =Bx 65 vv= RPN High
-- =Bx 06 vv= Data Entry
+- =tpqn= Ticks per quarter note (must be first)
+- =mode= MIDI mode / reset (GM, GM2, GS, XG)
+- =stop= End of track (must be last)
+- =sysx= Raw SysEx bytes
+- =soff= All Sound Off
 
-*** Meta Events
-
-- =FF 2F 00=        End of Track
-- =FF 51 03 tttttt= Set Tempo (microseconds per quarter-note = 60000000/BPM)
-  - Default: =07A120= (120 BPM)
+Text:
+- =text= Text Event
+- =copy= Copyright / Artist
+- =trck= Track Name
+- =inst= Instrument / Synth / Soundfont
+- =lyrc= Lyric
+- =mark= Marker
+- =cuep= Cue Point
 
 *** SysEx Messages
 
-- =F0 05 7E 7F 09 01 F7= General MIDI Mode
-- =F0 0A 41 10 42 12 40 00 7F 00 41 F7= Roland GS Mode
-- =F0 0A 41 10 42 12 40 1A 15 01 10 F7= Setup second drum channel =A= (requires GS mode)
+- =41 10 42 12 40 1A 15 01 10= Setup second drum channel =A= (requires GS mode)
 
 ** Keys
 
@@ -77,14 +72,3 @@ https://en.wikipedia.org/wiki/General_MIDI#RPN
 |        *8* | 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 6A | 6B |
 |          9 | 6C | 6D | 6E | 6F | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 |
 |         10 | 78 | 79 | 7A | 7B | 7C | 7D | 7E | 7F |    |    |    |    |
-
-* MIDI-Hex Syntax
-
-| Characters | Description                           |
-|------------+---------------------------------------|
-| =0-9 A-F=  | Hex digits                            |
-| =#=        | Line comment                          |
-| =< >=      | Skip lines between                    |
-| =:=        | Repeat line (=: count : start : end=) |
-| =__=       | Interpolate value                     |
-| =*+,-./=   | Ignored                               |
