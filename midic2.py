@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from enum import StrEnum
 
 class MidiStandard(StrEnum):
-	NONE = ''
+	NONE = 'OFF'
 	GM   = 'GM'
 	GM2  = 'GM2'
 	GS   = 'GS'
