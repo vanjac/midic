@@ -61,14 +61,15 @@ def write_varlen(args: argparse.Namespace, val: int):
 	write_bytes(args, b)
 
 def write_midi_event(args: argparse.Namespace, state: State, data: Sequence[int]):
-	if args.format == 'port':
-		args.midiout.send_message(bytes(data))
-	elif args.format == 'event':
-		args.output.write((bytes(data).hex() + '\n').encode())
-	else:
-		write_varlen(args, state.delta_ticks)
-		state.delta_ticks = 0
-		write_bytes(args, bytes(data))
+	match args.format:
+		case 'port':
+			args.midiout.send_message(bytes(data))
+		case 'event':
+			args.output.write((bytes(data).hex() + '\n').encode())
+		case _:
+			write_varlen(args, state.delta_ticks)
+			state.delta_ticks = 0
+			write_bytes(args, bytes(data))
 
 def write_col_midi_event(args: argparse.Namespace, state: State, col: ColumnState, data: list[int]):
 	if not col.mute:
@@ -193,10 +194,11 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 			validate_range(b1, 0, 0x7F) # bank
 			validate_range(b2, 0, 0x7F) # program
 			# https://www.fluidsynth.org/wiki/settings/synth/#settings_synth_midi-bank-select
-			if state.standard == MidiStandard.GS:
-				write_col_midi_event(args, state, col, [0xB0, 0x00, b1])
-			elif state.standard in [MidiStandard.GM2, MidiStandard.XG]:
-				write_col_midi_event(args, state, col, [0xB0, 0x20, b1])
+			match state.standard:
+				case MidiStandard.GS:
+					write_col_midi_event(args, state, col, [0xB0, 0x00, b1])
+				case MidiStandard.GM2 | MidiStandard.XG:
+					write_col_midi_event(args, state, col, [0xB0, 0x20, b1])
 			write_col_midi_event(args, state, col, [0xC0, b2])
 		case 'E':
 			validate_range(w, 0, 0x3FFF)
