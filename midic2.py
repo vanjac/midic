@@ -192,7 +192,6 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 			elif state.standard in [MidiStandard.GM2, MidiStandard.XG]:
 				write_col_midi_event(args, state, col, [0xB0, 0x20, b1])
 			write_col_midi_event(args, state, col, [0xC0, b2])
-			col.held_key = -1
 		case 'E':
 			validate_range(w, 0, 0x3FFF)
 			write_col_midi_event(args, state, col, [0xE0, w & 0x7F, w >> 7])
