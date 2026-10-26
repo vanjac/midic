@@ -24,7 +24,6 @@
 
 *** Controllers
 
-- =B 00vv= Bank Select (requires GS mode; set /before/ program change)
 - =B 01vv= Modulation (Vibrato)
 - =B 07vv= Channel Volume
 - =B 0Avv= Channel Panning
