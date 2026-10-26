@@ -11,7 +11,7 @@
 ** Events
 
 - =T iiif= Tempo (12.4 bit BPM)
-- =S tt00= Delay ticks
+- =S 00tt= Delay ticks
 - =M cm00= Set column MIDI channel + mute state
 - =C bbpp= Program change
 - =K kkvv= Note on
