@@ -151,13 +151,15 @@
   (with-current-buffer (get-buffer-create midi-comint-buffer-name)
     (unless (derived-mode-p 'comint-mode)
       (comint-mode))
-    (comint-exec (current-buffer) midi-comint-buffer-name midi-comint-program nil nil))
+    (comint-exec (current-buffer) midi-comint-buffer-name midi-comint-program nil nil)
+    (midi-gm-reset))
   (message "Started MIDI synth"))
 
 (defun midi-stop ()
   "Stop MIDI synth process."
   (interactive)
-  (delete-process midi-comint-buffer-name)
+  (midi-gm-reset)
+  (process-send-eof midi-comint-buffer-name)
   (message "Stopped MIDI synth"))
 
 (defun midi--send (str)
@@ -178,6 +180,11 @@
   "Send all-sound-off command for each channel."
   (interactive)
   (midi--send ">soff\n"))
+
+(defun midi-gm-reset ()
+  "Send GM reset command"
+  (interactive)
+  (midi--send ">mode\tgm\n"))
 
 (define-derived-mode midi-hex-mode prog-mode "MIDI"
   "Major mode for editing MIDI-Hex files."
