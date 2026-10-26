@@ -16,67 +16,67 @@ mode	GM
 
 	C 0000
 ## Percussion Keys
-	K 1B7F	# High Q
-	K 1C7F	# Slap
-	K 1D7F	# Scratch Push
-	K 1E7F	# Scratch Pull
-	K 1F7F	# Sticks
-	K 207F	# Square Click
-	K 217F	# Metronome Click
-	K 227F	# Metronome Bell
-	K 237F	# Acoustic Bass Drum
-	K 247F	# Electric Bass Drum
-	K 257F	# Side Stick
-	K 267F	# Acoustic Snare
-	K 277F	# Hand Clap
-	K 287F	# Electric Snare
-	K 297F	# Low Floor Tom
-	K 2A7F	# Closed Hi-Hat
-	K 2B7F	# High Floor Tom
-	K 2C7F	# Pedal Hi-Hat
-	K 2D7F	# Low Tom
-	K 2E7F	# Open Hi-Hat
-	K 2F7F	# Low Mid Tom
-	K 307F	# Hi-Mid Tom
-	K 317F	# Crash Cymbal 1
-	K 327F	# High Tom
-	K 337F	# Ride Cymbal 1
-	K 347F	# Chinese Cymbal
-	K 357F	# Ride Bell
-	K 367F	# Tambourine
-	K 377F	# Splash Cymbal
-	K 387F	# Cowbell
-	K 397F	# Crash Cymbal 2
-	K 3A7F	# Vibraslap
-	K 3B7F	# Ride Cymbal 2
-	K 3C7F	# Hi Bongo
-	K 3D7F	# Low Bongo
-	K 3E7F	# Mute Hi Conga
-	K 3F7F	# Open Hi Conga
-	K 407F	# Low Conga
-	K 417F	# High Timbale
-	K 427F	# Low Timbale
-	K 437F	# High Agogo
-	K 447F	# Low Agogo
-	K 457F	# Cabasa
-	K 467F	# Maracas
-	K 477F	# Short Whistle
-	K 487F	# Long Whistle
-	K 497F	# Short Guiro
-	K 4A7F	# Long Guiro
-	K 4B7F	# Claves
-	K 4C7F	# Hi Wood Block
-	K 4D7F	# Low Wood Block
-	K 4E7F	# Mute Cuica
-	K 4F7F	# Open Cuica
-	K 507F	# Mute Triangle
-	K 517F	# Open Triangle
-	K 527F	# Shaker
-	K 537F	# Jingle Bell
-	K 547F	# Belltree
-	K 557F	# Castanets
-	K 567F	# Mute Surdo
-	K 577F	# Open Surdo
+	K 1B7F	S 0060	# High Q
+	K 1C7F	S 0060	# Slap
+	K 1D7F	S 0060	# Scratch Push
+	K 1E7F	S 0060	# Scratch Pull
+	K 1F7F	S 0060	# Sticks
+	K 207F	S 0060	# Square Click
+	K 217F	S 0060	# Metronome Click
+	K 227F	S 0060	# Metronome Bell
+	K 237F	S 0060	# Acoustic Bass Drum
+	K 247F	S 0060	# Electric Bass Drum
+	K 257F	S 0060	# Side Stick
+	K 267F	S 0060	# Acoustic Snare
+	K 277F	S 0060	# Hand Clap
+	K 287F	S 0060	# Electric Snare
+	K 297F	S 0060	# Low Floor Tom
+	K 2A7F	S 0060	# Closed Hi-Hat
+	K 2B7F	S 0060	# High Floor Tom
+	K 2C7F	S 0060	# Pedal Hi-Hat
+	K 2D7F	S 0060	# Low Tom
+	K 2E7F	S 0060	# Open Hi-Hat
+	K 2F7F	S 0060	# Low Mid Tom
+	K 307F	S 0060	# Hi-Mid Tom
+	K 317F	S 0060	# Crash Cymbal 1
+	K 327F	S 0060	# High Tom
+	K 337F	S 0060	# Ride Cymbal 1
+	K 347F	S 0060	# Chinese Cymbal
+	K 357F	S 0060	# Ride Bell
+	K 367F	S 0060	# Tambourine
+	K 377F	S 0060	# Splash Cymbal
+	K 387F	S 0060	# Cowbell
+	K 397F	S 0060	# Crash Cymbal 2
+	K 3A7F	S 0060	# Vibraslap
+	K 3B7F	S 0060	# Ride Cymbal 2
+	K 3C7F	S 0060	# Hi Bongo
+	K 3D7F	S 0060	# Low Bongo
+	K 3E7F	S 0060	# Mute Hi Conga
+	K 3F7F	S 0060	# Open Hi Conga
+	K 407F	S 0060	# Low Conga
+	K 417F	S 0060	# High Timbale
+	K 427F	S 0060	# Low Timbale
+	K 437F	S 0060	# High Agogo
+	K 447F	S 0060	# Low Agogo
+	K 457F	S 0060	# Cabasa
+	K 467F	S 0060	# Maracas
+	K 477F	S 0060	# Short Whistle
+	K 487F	S 0060	# Long Whistle
+	K 497F	S 0060	# Short Guiro
+	K 4A7F	S 0060	# Long Guiro
+	K 4B7F	S 0060	# Claves
+	K 4C7F	S 0060	# Hi Wood Block
+	K 4D7F	S 0060	# Low Wood Block
+	K 4E7F	S 0060	# Mute Cuica
+	K 4F7F	S 0060	# Open Cuica
+	K 507F	S 0060	# Mute Triangle
+	K 517F	S 0060	# Open Triangle
+	K 527F	S 0060	# Shaker
+	K 537F	S 0060	# Jingle Bell
+	K 547F	S 0060	# Belltree
+	K 557F	S 0060	# Castanets
+	K 567F	S 0060	# Mute Surdo
+	K 577F	S 0060	# Open Surdo
 
 >mode	GM
 stop
