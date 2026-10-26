@@ -3,149 +3,149 @@ tpqn	60
 mode	GM
 #				(Name)		(GS Banks)
 ## Piano
-	C 0000	N 3C7F	S 0060 # Acous. Grand	08,10
-	C 0001	N 3C7F	S 0060 # Bright	08
-	C 0002	N 3C7F	S 0060 # Elec. Grand	08
-	C 0003	N 3C7F	S 0060 # Honky-tonk	08
-	C 0004	N 3C7F	S 0060 # Elec. Piano 1	08,10,18
-	C 0005	N 3C7F	S 0060 # Elec. Piano 2	08,10
-	C 0006	N 3C7F	S 0060 # Harpsichord	08,10,18
-	C 0007	N 3C7F	S 0060 # Clavi
+	C 0000	N 3C7F	S 6000 # Acous. Grand	08,10
+	C 0001	N 3C7F	S 6000 # Bright	08
+	C 0002	N 3C7F	S 6000 # Elec. Grand	08
+	C 0003	N 3C7F	S 6000 # Honky-tonk	08
+	C 0004	N 3C7F	S 6000 # Elec. Piano 1	08,10,18
+	C 0005	N 3C7F	S 6000 # Elec. Piano 2	08,10
+	C 0006	N 3C7F	S 6000 # Harpsichord	08,10,18
+	C 0007	N 3C7F	S 6000 # Clavi
 ## Chromatic Percussion
-	C 0008	N 3C7F	S 0060 # Celesta
-	C 0009	N 3C7F	S 0060 # Glockenspiel
-	C 000A	N 3C7F	S 0060 # Music Box
-	C 000B	N 3C7F	S 0060 # Vibraphone	08
-	C 000C	N 3C7F	S 0060 # Marimba	08
-	C 000D	N 3C7F	S 0060 # Xylophone
-	C 000E	N 3C7F	S 0060 # Tubular Bells	08,09
-	C 000F	N 3C7F	S 0060 # Dulcimer
+	C 0008	N 3C7F	S 6000 # Celesta
+	C 0009	N 3C7F	S 6000 # Glockenspiel
+	C 000A	N 3C7F	S 6000 # Music Box
+	C 000B	N 3C7F	S 6000 # Vibraphone	08
+	C 000C	N 3C7F	S 6000 # Marimba	08
+	C 000D	N 3C7F	S 6000 # Xylophone
+	C 000E	N 3C7F	S 6000 # Tubular Bells	08,09
+	C 000F	N 3C7F	S 6000 # Dulcimer
 ## Organ
-	C 0010	N 3C7F	S 0060 # Drawbar Organ	08,10,20
-	C 0011	N 3C7F	S 0060 # Percussive	08,20
-	C 0012	N 3C7F	S 0060 # Rock Organ
-	C 0013	N 3C7F	S 0060 # Church Organ	08,10
-	C 0014	N 3C7F	S 0060 # Reed Organ
-	C 0015	N 3C7F	S 0060 # Accordion	08
-	C 0016	N 3C7F	S 0060 # Harmonica
-	C 0017	N 3C7F	S 0060 # Tango Accord.
+	C 0010	N 3C7F	S 6000 # Drawbar Organ	08,10,20
+	C 0011	N 3C7F	S 6000 # Percussive	08,20
+	C 0012	N 3C7F	S 6000 # Rock Organ
+	C 0013	N 3C7F	S 6000 # Church Organ	08,10
+	C 0014	N 3C7F	S 6000 # Reed Organ
+	C 0015	N 3C7F	S 6000 # Accordion	08
+	C 0016	N 3C7F	S 6000 # Harmonica
+	C 0017	N 3C7F	S 6000 # Tango Accord.
 ## Guitar
-	C 0018	N 3C7F	S 0060 # Acous. Nylon	08,10,20
-	C 0019	N 3C7F	S 0060 # Acous. Steel	08,10
-	C 001A	N 3C7F	S 0060 # Elec. Jazz	08
-	C 001B	N 3C7F	S 0060 # Elec. Clean	08
-	C 001C	N 3C7F	S 0060 # Elec. Muted	08,10
-	C 001D	N 3C7F	S 0060 # Overdriven
-	C 001E	N 3C7F	S 0060 # Distortion	08
-	C 001F	N 3C7F	S 0060 # Harmonics	08
+	C 0018	N 3C7F	S 6000 # Acous. Nylon	08,10,20
+	C 0019	N 3C7F	S 6000 # Acous. Steel	08,10
+	C 001A	N 3C7F	S 6000 # Elec. Jazz	08
+	C 001B	N 3C7F	S 6000 # Elec. Clean	08
+	C 001C	N 3C7F	S 6000 # Elec. Muted	08,10
+	C 001D	N 3C7F	S 6000 # Overdriven
+	C 001E	N 3C7F	S 6000 # Distortion	08
+	C 001F	N 3C7F	S 6000 # Harmonics	08
 ## Bass
-	C 0020	N 3C7F	S 0060 # Acous. Bass
-	C 0021	N 3C7F	S 0060 # Fingered Elec.
-	C 0022	N 3C7F	S 0060 # Plucked Elec.
-	C 0023	N 3C7F	S 0060 # Fretless Bass
-	C 0024	N 3C7F	S 0060 # Slap Bass 1
-	C 0025	N 3C7F	S 0060 # Slap Bass 2
-	C 0026	N 3C7F	S 0060 # Synth Bass 1	01,08
-	C 0027	N 3C7F	S 0060 # Synth Bass 2	08,10
+	C 0020	N 3C7F	S 6000 # Acous. Bass
+	C 0021	N 3C7F	S 6000 # Fingered Elec.
+	C 0022	N 3C7F	S 6000 # Plucked Elec.
+	C 0023	N 3C7F	S 6000 # Fretless Bass
+	C 0024	N 3C7F	S 6000 # Slap Bass 1
+	C 0025	N 3C7F	S 6000 # Slap Bass 2
+	C 0026	N 3C7F	S 6000 # Synth Bass 1	01,08
+	C 0027	N 3C7F	S 6000 # Synth Bass 2	08,10
 ## Strings
-	C 0028	N 3C7F	S 0060 # Violin	08
-	C 0029	N 3C7F	S 0060 # Viola
-	C 002A	N 3C7F	S 0060 # Cello
-	C 002B	N 3C7F	S 0060 # Contrabass
-	C 002C	N 3C7F	S 0060 # Tremolo
-	C 002D	N 3C7F	S 0060 # Pizzicato
-	C 002E	N 3C7F	S 0060 # Orch. Harp
-	C 002F	N 3C7F	S 0060 # Timpani
+	C 0028	N 3C7F	S 6000 # Violin	08
+	C 0029	N 3C7F	S 6000 # Viola
+	C 002A	N 3C7F	S 6000 # Cello
+	C 002B	N 3C7F	S 6000 # Contrabass
+	C 002C	N 3C7F	S 6000 # Tremolo
+	C 002D	N 3C7F	S 6000 # Pizzicato
+	C 002E	N 3C7F	S 6000 # Orch. Harp
+	C 002F	N 3C7F	S 6000 # Timpani
 ## Ensemble
-	C 0030	N 3C7F	S 0060 # Ensemble 1	08
-	C 0031	N 3C7F	S 0060 # Ensemble 2
-	C 0032	N 3C7F	S 0060 # Synth Str. 1	08
-	C 0033	N 3C7F	S 0060 # Synth Str. 2
-	C 0034	N 3C7F	S 0060 # Choir Aahs	20
-	C 0035	N 3C7F	S 0060 # Voice Oohs
-	C 0036	N 3C7F	S 0060 # Synth Voice
-	C 0037	N 3C7F	S 0060 # Orchestra Hit
+	C 0030	N 3C7F	S 6000 # Ensemble 1	08
+	C 0031	N 3C7F	S 6000 # Ensemble 2
+	C 0032	N 3C7F	S 6000 # Synth Str. 1	08
+	C 0033	N 3C7F	S 6000 # Synth Str. 2
+	C 0034	N 3C7F	S 6000 # Choir Aahs	20
+	C 0035	N 3C7F	S 6000 # Voice Oohs
+	C 0036	N 3C7F	S 6000 # Synth Voice
+	C 0037	N 3C7F	S 6000 # Orchestra Hit
 ## Brass
-	C 0038	N 3C7F	S 0060 # Trumpet
-	C 0039	N 3C7F	S 0060 # Trombone	01
-	C 003A	N 3C7F	S 0060 # Tuba
-	C 003B	N 3C7F	S 0060 # Muted Trumpet
-	C 003C	N 3C7F	S 0060 # French Horn	01
-	C 003D	N 3C7F	S 0060 # Brass Section	08
-	C 003E	N 3C7F	S 0060 # Synth Brass 1	08,10
-	C 003F	N 3C7F	S 0060 # Synth Brass 2	08,10
+	C 0038	N 3C7F	S 6000 # Trumpet
+	C 0039	N 3C7F	S 6000 # Trombone	01
+	C 003A	N 3C7F	S 6000 # Tuba
+	C 003B	N 3C7F	S 6000 # Muted Trumpet
+	C 003C	N 3C7F	S 6000 # French Horn	01
+	C 003D	N 3C7F	S 6000 # Brass Section	08
+	C 003E	N 3C7F	S 6000 # Synth Brass 1	08,10
+	C 003F	N 3C7F	S 6000 # Synth Brass 2	08,10
 ## Reed
-	C 0040	N 3C7F	S 0060 # Soprano Sax
-	C 0041	N 3C7F	S 0060 # Alto Sax
-	C 0042	N 3C7F	S 0060 # Tenor Sax
-	C 0043	N 3C7F	S 0060 # Baritone Sax
-	C 0044	N 3C7F	S 0060 # Oboe
-	C 0045	N 3C7F	S 0060 # English Horn
-	C 0046	N 3C7F	S 0060 # Bassoon
-	C 0047	N 3C7F	S 0060 # Clarinet
+	C 0040	N 3C7F	S 6000 # Soprano Sax
+	C 0041	N 3C7F	S 6000 # Alto Sax
+	C 0042	N 3C7F	S 6000 # Tenor Sax
+	C 0043	N 3C7F	S 6000 # Baritone Sax
+	C 0044	N 3C7F	S 6000 # Oboe
+	C 0045	N 3C7F	S 6000 # English Horn
+	C 0046	N 3C7F	S 6000 # Bassoon
+	C 0047	N 3C7F	S 6000 # Clarinet
 ## Pipe
-	C 0048	N 3C7F	S 0060 # Piccolo
-	C 0049	N 3C7F	S 0060 # Flute
-	C 004A	N 3C7F	S 0060 # Recorder
-	C 004B	N 3C7F	S 0060 # Pan Flute
-	C 004C	N 3C7F	S 0060 # Blown Bottle
-	C 004D	N 3C7F	S 0060 # Shakuhachi
-	C 004E	N 3C7F	S 0060 # Whistle
-	C 004F	N 3C7F	S 0060 # Ocarina
+	C 0048	N 3C7F	S 6000 # Piccolo
+	C 0049	N 3C7F	S 6000 # Flute
+	C 004A	N 3C7F	S 6000 # Recorder
+	C 004B	N 3C7F	S 6000 # Pan Flute
+	C 004C	N 3C7F	S 6000 # Blown Bottle
+	C 004D	N 3C7F	S 6000 # Shakuhachi
+	C 004E	N 3C7F	S 6000 # Whistle
+	C 004F	N 3C7F	S 6000 # Ocarina
 ## Synth Lead
-	C 0050	N 3C7F	S 0060 # Square	01,08
-	C 0051	N 3C7F	S 0060 # Sawtooth	01,08
-	C 0052	N 3C7F	S 0060 # Calliope
-	C 0053	N 3C7F	S 0060 # Chiff
-	C 0054	N 3C7F	S 0060 # Charang
-	C 0055	N 3C7F	S 0060 # Voice
-	C 0056	N 3C7F	S 0060 # Fifths
-	C 0057	N 3C7F	S 0060 # Bass + Lead
+	C 0050	N 3C7F	S 6000 # Square	01,08
+	C 0051	N 3C7F	S 6000 # Sawtooth	01,08
+	C 0052	N 3C7F	S 6000 # Calliope
+	C 0053	N 3C7F	S 6000 # Chiff
+	C 0054	N 3C7F	S 6000 # Charang
+	C 0055	N 3C7F	S 6000 # Voice
+	C 0056	N 3C7F	S 6000 # Fifths
+	C 0057	N 3C7F	S 6000 # Bass + Lead
 ## Synth Pad
-	C 0058	N 3C7F	S 0060 # New Age
-	C 0059	N 3C7F	S 0060 # Warm
-	C 005A	N 3C7F	S 0060 # Polysynth
-	C 005B	N 3C7F	S 0060 # Choir
-	C 005C	N 3C7F	S 0060 # Bowed
-	C 005D	N 3C7F	S 0060 # Metallic
-	C 005E	N 3C7F	S 0060 # Halo
-	C 005F	N 3C7F	S 0060 # Sweep
+	C 0058	N 3C7F	S 6000 # New Age
+	C 0059	N 3C7F	S 6000 # Warm
+	C 005A	N 3C7F	S 6000 # Polysynth
+	C 005B	N 3C7F	S 6000 # Choir
+	C 005C	N 3C7F	S 6000 # Bowed
+	C 005D	N 3C7F	S 6000 # Metallic
+	C 005E	N 3C7F	S 6000 # Halo
+	C 005F	N 3C7F	S 6000 # Sweep
 ## Synth Effects
-	C 0060	N 3C7F	S 0060 # Rain
-	C 0061	N 3C7F	S 0060 # Soundtrack
-	C 0062	N 3C7F	S 0060 # Crystal	01
-	C 0063	N 3C7F	S 0060 # Atmosphere
-	C 0064	N 3C7F	S 0060 # Brightness
-	C 0065	N 3C7F	S 0060 # Goblins
-	C 0066	N 3C7F	S 0060 # Echoes	01,02
-	C 0067	N 3C7F	S 0060 # Sci-Fi
+	C 0060	N 3C7F	S 6000 # Rain
+	C 0061	N 3C7F	S 6000 # Soundtrack
+	C 0062	N 3C7F	S 6000 # Crystal	01
+	C 0063	N 3C7F	S 6000 # Atmosphere
+	C 0064	N 3C7F	S 6000 # Brightness
+	C 0065	N 3C7F	S 6000 # Goblins
+	C 0066	N 3C7F	S 6000 # Echoes	01,02
+	C 0067	N 3C7F	S 6000 # Sci-Fi
 ## Ethnic
-	C 0068	N 3C7F	S 0060 # Sitar	01
-	C 0069	N 3C7F	S 0060 # Banjo
-	C 006A	N 3C7F	S 0060 # Shamisen
-	C 006B	N 3C7F	S 0060 # Koto	08
-	C 006C	N 3C7F	S 0060 # Kalimba
-	C 006D	N 3C7F	S 0060 # Bagpipe
-	C 006E	N 3C7F	S 0060 # Fiddle
-	C 006F	N 3C7F	S 0060 # Shanai
+	C 0068	N 3C7F	S 6000 # Sitar	01
+	C 0069	N 3C7F	S 6000 # Banjo
+	C 006A	N 3C7F	S 6000 # Shamisen
+	C 006B	N 3C7F	S 6000 # Koto	08
+	C 006C	N 3C7F	S 6000 # Kalimba
+	C 006D	N 3C7F	S 6000 # Bagpipe
+	C 006E	N 3C7F	S 6000 # Fiddle
+	C 006F	N 3C7F	S 6000 # Shanai
 ## Percussive
-	C 0070	N 3C7F	S 0060 # Tinkle Bell
-	C 0071	N 3C7F	S 0060 # Agogo
-	C 0072	N 3C7F	S 0060 # Steel Drums
-	C 0073	N 3C7F	S 0060 # Woodblock	08
-	C 0074	N 3C7F	S 0060 # Taiko Drum	08
-	C 0075	N 3C7F	S 0060 # Melodic Tom	08
-	C 0076	N 3C7F	S 0060 # Synth Drum	08,09
-	C 0077	N 3C7F	S 0060 # Reverse Cymbal
+	C 0070	N 3C7F	S 6000 # Tinkle Bell
+	C 0071	N 3C7F	S 6000 # Agogo
+	C 0072	N 3C7F	S 6000 # Steel Drums
+	C 0073	N 3C7F	S 6000 # Woodblock	08
+	C 0074	N 3C7F	S 6000 # Taiko Drum	08
+	C 0075	N 3C7F	S 6000 # Melodic Tom	08
+	C 0076	N 3C7F	S 6000 # Synth Drum	08,09
+	C 0077	N 3C7F	S 6000 # Reverse Cymbal
 ## Sound Effects
-	C 0078	N 3C7F	S 0060 # Guitar Fret	01,02
-	C 0079	N 3C7F	S 0060 # Breath	01
-	C 007A	N 3C7F	S 0060 # Seashore	01,02,03,04,05
-	C 007B	N 3C7F	S 0060 # Bird Tweet	01,02,03
-	C 007C	N 3C7F	S 0060 # Phone Ring	01,02,03,04,05
-	C 007D	N 3C7F	S 0060 # Helicopter	01,02,03,04,05,06,07,08,09
-	C 007E	N 3C7F	S 0060 # Applause	01,02,03,04,05
-	C 007F	N 3C7F	S 0060 # Gunshot	01,02,03
+	C 0078	N 3C7F	S 6000 # Guitar Fret	01,02
+	C 0079	N 3C7F	S 6000 # Breath	01
+	C 007A	N 3C7F	S 6000 # Seashore	01,02,03,04,05
+	C 007B	N 3C7F	S 6000 # Bird Tweet	01,02,03
+	C 007C	N 3C7F	S 6000 # Phone Ring	01,02,03,04,05
+	C 007D	N 3C7F	S 6000 # Helicopter	01,02,03,04,05,06,07,08,09
+	C 007E	N 3C7F	S 6000 # Applause	01,02,03,04,05
+	C 007F	N 3C7F	S 6000 # Gunshot	01,02,03
 		R 3C7F
 
 >mode	GM

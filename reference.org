@@ -11,16 +11,16 @@
 ** Events
 
 - =T iiif= Tempo (12.4 bit BPM)
-- =S 00tt= Delay ticks
-- =M cm00= Set column MIDI channel + mute state
-- =C bbpp= Program change
-- =K kkvv= Note on
-- =R kkvv= Note off
-- =N kkvv= Prev Note off + Note on
-- =L kkvv= Note on + Prev Note off ("legato")
-- =A kkpp= Key pressure (key = =80= for channel pressure)
-- =B ccvv= Control/RPN change
-- =E vvvv= Pitch wheel
+- =S ttrr= Delay Ticks + Repeat
+- =M cm00= Set Column MIDI Channel + Mute State
+- =C bbpp= Program Change
+- =K kkvv= Note On
+- =R kkvv= Note Off
+- =N kkvv= Prev Note Off + Note On
+- =L kkvv= Note On + Prev Note Off ("Legato")
+- =A kkpp= Key Pressure (key = =80= for channel pressure)
+- =B ccvv= Control/RPN Change
+- =E vvvv= Pitch Wheel
 
 *** Controllers
 
@@ -31,15 +31,15 @@
 - =B 7800= All Sound Off
 - =B 7900= Reset All Controllers
 - =B 7B00= All Notes Off
-- =B 80vv= Pitch bend range
-- =B 81vv= Fine tune
-- =B 82vv= Coarse tune
+- =B 80vv= Pitch Bend Range
+- =B 81vv= Fine Tune
+- =B 82vv= Coarse Tune
 
 ** Meta Commands
 
-- =tpqn= Ticks per quarter note (must be first)
-- =mode= MIDI mode / reset (GM, GM2, GS, XG)
-- =stop= End of track (must be last)
+- =tpqn= Ticks Per Quarter Note (must be first)
+- =mode= MIDI Mode / Reset (GM, GM2, GS, XG)
+- =stop= End of Track (must be last)
 - =sysx= Raw SysEx bytes
 - =soff= All Sound Off
 

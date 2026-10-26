@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, re, os, sys
+import argparse, os, re, sys
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 from enum import Enum
@@ -16,12 +16,14 @@ class ColumnState:
 	channel: int = 0
 	mute: bool = False
 	held_key: int = -1
+	interp_from: int = 0
 
 @dataclass
 class State:
 	standard: MidiStandard = MidiStandard.NONE
 	skip: bool = False
 	delta_ticks: int = 0
+	repeat: int = 0
 	columns: list[ColumnState] = field(default_factory=list)
 
 class ParseError(Exception):
@@ -128,16 +130,20 @@ def write_header(args: argparse.Namespace, tpqn: int):
 		0xFF, 0xFF, 0xFF, 0xFF, # length (to be overwritten)
 	]))
 
-def process_event(args: argparse.Namespace, state: State, col: ColumnState, field: str):
+def process_event(args: argparse.Namespace, state: State, col: ColumnState, field: str, t: float):
 	evstr = re.sub(r' ', '', field)
 	if not evstr:
 		return
 	if len(evstr) != 5:
 		raise ParseError(f'Invalid event syntax: {field}')
 
-	b1 = parse_hex(evstr[1:3])
-	b2 = parse_hex(evstr[3:5])
-	w = (b1 << 8) | b2
+	w = parse_hex(evstr[1:5])
+	if t == 1:
+		col.interp_from = w
+	else:
+		w = int(w * t + col.interp_from * (1-t))
+	b1 = w >> 8
+	b2 = w & 0xFF
 	match evstr[0].upper():
 		case 'M':
 			mute = b1 & 0xF
@@ -201,8 +207,8 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 			uspqn = int(60000000 / bpm)
 			write_meta_event(args, state, 0x51, uspqn.to_bytes(3))
 		case 'S':
-			validate_range(b1, 0, 0) # TODO: repeat, interpolate
-			state.delta_ticks += b2
+			state.delta_ticks += b1
+			state.repeat = b2
 		case cmd:
 			raise ParseError(f'Unknown event command: {cmd}')
 
@@ -217,10 +223,13 @@ def process_line(args: argparse.Namespace, state: State, line: str):
 	cmd = re.sub(r'[<>\-= ]', '', fields[0])
 	match cmd.lower():
 		case '':
-			for i, f in enumerate(fields[1:]):
-				if len(state.columns) < i + 1:
-					state.columns.append(ColumnState())
-				process_event(args, state, state.columns[i], f)
+			repeat = state.repeat
+			state.repeat = 0
+			for i in range(repeat + 1):
+				for c, f in enumerate(fields[1:]):
+					if len(state.columns) < c + 1:
+						state.columns.append(ColumnState())
+					process_event(args, state, state.columns[c], f, (i + 1) / (repeat + 1))
 		case 'tpqn':
 			validate_cmd_fields(cmd, fields, 2)
 			tpqn = parse_hex(fields[1])
