@@ -10,17 +10,38 @@
 
 ## Events
 
-- `T iiif` Tempo (12.4 bit BPM)
-- `S ttrr` Delay Ticks + Repeat
-- `M cm00` Set Column MIDI Channel + Mute State
+- `T iiif` Tempo
+  - `iii`: Integer part. Default: `078`
+  - `f`: Fractional part
+- `S ttrr` Delay + Repeat
+  - `tt`: Delay ticks
+  - `rr`: Repeat/interpolate next row
+- `M cm00` Column Properties
+  - `c`: MIDI channel (`0` to `F`)
+  - `m`: 1 = mute, 0 = unmute
 - `C bbpp` Program Change
+  - `bb`: Bank
+  - `pp`: Program
 - `K kkvv` Note On
+  - `kk`: Key
+  - `vv`: Velocity
 - `R kkvv` Note Off
+  - `kk`: Key, or `80` = prev note
+  - `vv`: Release velocity
 - `N kkvv` Prev Note Off + Note On
+  - `kk`: Key
+  - `vv`: Velocity
 - `L kkvv` Note On + Prev Note Off ("Legato")
-- `A kkpp` Key Pressure (key = `80` for channel pressure)
+  - `kk`: Key
+  - `vv`: Velocity
+- `A kkpp` Key Pressure
+  - `kk`: Key, or `80` = channel
+  - `vv`: Pressure
 - `B ccvv` Control/RPN Change
+  - `cc`: Controller (`00` to `7F`) or RPN (`80` to `FF`)
+  - `vv`: Value
 - `E vvvv` Pitch Wheel
+  - `vvvv`: Pitch (`0000` to `3FFF`). Default: `2000`
 
 ### Controllers
 
