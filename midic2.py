@@ -207,7 +207,7 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 			validate_range(w, 0x3A, 0xFFFF)
 			bpm = w / 16
 			uspqn = int(60000000 / bpm)
-			write_meta_event(args, state, 0x51, uspqn.to_bytes(3))
+			write_meta_event(args, state, 0x51, uspqn.to_bytes(3, 'big'))
 		case 'S':
 			state.delta_ticks += b1
 			state.repeat = b2
