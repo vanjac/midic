@@ -200,6 +200,9 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 					write_col_midi_event(args, state, col, [0xB0, 0x00, b1])
 				case MidiStandard.GM2 | MidiStandard.XG:
 					write_col_midi_event(args, state, col, [0xB0, 0x20, b1])
+				case _:
+					if b1 != 0:
+						logger.warning('Bank select not supported in this mode')
 			write_col_midi_event(args, state, col, [0xC0, b2])
 		case 'E':
 			validate_range(w, 0, 0x3FFF)
