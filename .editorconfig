@@ -4,15 +4,13 @@ root = true
 
 [*]
 charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
 
 [*.mhex]
 indent_style = tab
 indent_size = 8
-insert_final_newline = true
-trim_trailing_whitespace = true
 
 [*.py]
 indent_style = tab
 indent_size = tab
-insert_final_newline = true
-trim_trailing_whitespace = true

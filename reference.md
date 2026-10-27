@@ -34,9 +34,9 @@
 - `L kkvv` Note On + Prev Note Off ("Legato")
   - `kk`: Key
   - `vv`: Velocity
-- `A kkpp` Key Pressure
+- `A kkpp` Aftertouch
   - `kk`: Key, or `80` = channel
-  - `vv`: Pressure
+  - `pp`: Pressure
 - `B ccvv` Control/RPN Change
   - `cc`: Controller (`00` to `7F`) or RPN (`80` to `FF`)
   - `vv`: Value
@@ -49,7 +49,7 @@
 - `B 07vv` Channel Volume
 - `B 0Avv` Channel Panning
 - `B 0Bvv` Expression
-- `B 7800` All Sound Off
+- `B 7800` All Sound Off (all channels)
 - `B 7900` Reset All Controllers
 - `B 7B00` All Notes Off
 - `B 80vv` Pitch Bend Range
