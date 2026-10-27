@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import argparse, os, re, sys
+import argparse, logging, os, re, sys
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 from enum import Enum
+logger = logging.getLogger(__name__)
 
 class MidiStandard(Enum):
 	NONE = 'OFF'
@@ -276,7 +277,8 @@ def process_line(args: argparse.Namespace, state: State, line: str):
 		case _:
 			raise ParseError(f'Unknown command: {cmd}')
 
-def main() -> str | None:
+def main() -> int:
+	logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-i', '--input', default='-', type=argparse.FileType('r'))
 	parser.add_argument('-o', '--output', default='-', type=argparse.FileType('wb'))
@@ -284,38 +286,41 @@ def main() -> str | None:
 	parser.add_argument('-p', '--portname', default='*')
 	args = parser.parse_args()
 	if args.format == 'smf' and not args.output.seekable():
-		return 'Error: SMF output must be a seekable file'
+		logger.error('SMF output must be a seekable file')
+		return 1
 
 	if args.format == 'port':
 		import fnmatch, rtmidi # type: ignore
 		args.midiout = rtmidi.MidiOut()
 		ports = args.midiout.get_ports()
-		print('Ports:\n  ' + '\n  '.join(ports))
+		logger.info('Ports available:\n' + ''.join(f'  {name}\n' for name in ports))
 		pattern = args.portname.lower()
 		portidx = next((i for i,p in enumerate(ports) if fnmatch.fnmatch(p.lower(), pattern)), None)
 		if portidx is None:
-			return 'No matching port'
-		print('Selected:', ports[portidx])
+			logger.error('No matching port')
+			return 1
+		logger.info(f'Selected port: {ports[portidx]}')
 		args.midiout.open_port(portidx)
 
 	state = State()
-	error = None
+	status = 0
 	for i, line in enumerate(args.input):
 		try:
 			process_line(args, state, line)
 		except ParseError as e:
-			print(f'Error on line {i + 1}: {e.args[0]}')
-			error = 'There were errors while parsing the file'
+			logger.error(f'on line {i + 1}: {e.args[0]}')
+			status = 1
 		if args.format == 'event':
 			args.output.flush()
 
 	if args.format == 'smf':
 		size = args.output.tell() - 22
 		if size < 0:
-			return 'Error: Not enough data (missing header?)'
+			logger.error('Not enough data (missing header?)')
+			return 1
 		args.output.seek(18, os.SEEK_SET)
 		args.output.write(size.to_bytes(4, 'big'))
-	return error
+	return status
 
 if __name__ == '__main__':
 	sys.exit(main())
