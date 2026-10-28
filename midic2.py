@@ -111,6 +111,16 @@ def write_reset_message(args: argparse.Namespace, state: State):
 		case MidiStandard.XG:
 			write_sysex(args, state, [0x43, 0x10, 0x4C, 0x00, 0x00, 0x7E, 0x00])
 
+def write_gs_drum_mode_sysex(args: argparse.Namespace, state: State, col: ColumnState, drum: bool):
+	if col.channel < 9:
+		addr = 0x11 + col.channel
+	elif col.channel > 9:
+		addr = 0x10 + col.channel
+	else:
+		addr = 0x10
+	val = 1 if drum else 0
+	write_sysex(args, state, [0x41, 0x10, 0x42, 0x12, 0x40, addr, 0x15, val, 0x2B - addr - val])
+
 def write_meta_text(args: argparse.Namespace, state: State, fields: list[str], evtype: int):
 	if len(fields) < 2:
 		raise ParseError('Text is empty')
@@ -195,6 +205,8 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 				write_col_midi_event(args, state, col, [0xB0, 0x65, 0x00])
 				write_col_midi_event(args, state, col, [0xB0, 0x64, b1 & 0x7F])
 				write_col_midi_event(args, state, col, [0xB0, 0x06, b2])
+			elif state.standard == MidiStandard.GS and b1 == 0x00 and 0x78 <= b2 <= 0x79:
+				write_gs_drum_mode_sysex(args, state, col, b2 == 0x78)
 			else:
 				write_col_midi_event(args, state, col, [0xB0, b1, b2])
 		case 'C':
