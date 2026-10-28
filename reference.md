@@ -45,11 +45,13 @@
 
 ### Controllers
 
+- `B 00vv` Bank MSB; change to rhythm channel (`78`) or melodic channel (`79`)
 - `B 01vv` Modulation (Vibrato)
-- `B 07vv` Channel Volume
-- `B 0Avv` Channel Panning
-- `B 0Bvv` Expression
-- `B 7800` All Sound Off (all channels)
+- `B 07vv` Channel Volume. Default: `64`
+- `B 0Avv` Channel Panning. Default: `40`
+- `B 0Bvv` Expression. Default: `7F`
+- `B 40vv` Sustain
+- `B 7800` All Sound Off
 - `B 7900` Reset All Controllers
 - `B 7B00` All Notes Off
 - `B 80vv` Pitch Bend Range
@@ -62,7 +64,7 @@
 - `mode` MIDI Mode / Reset (GM, GM2, GS, XG)
 - `stop` End of Track (must be last)
 - `sysx` Raw SysEx bytes
-- `soff` All Sound Off
+- `soff` All Sound Off (all channels)
 
 Text:
 - `text` Text Event
@@ -72,10 +74,6 @@ Text:
 - `lyrc` Lyric
 - `mark` Marker
 - `cuep` Cue Point
-
-### SysEx Messages
-
-- `41 10 42 12 40 1A 15 01 10` Setup second drum channel `A` (requires GS mode)
 
 ## Keys
 
