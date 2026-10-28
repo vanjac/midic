@@ -53,7 +53,6 @@
 - `B 40vv` Sustain
 - `B 7800` All Sound Off
 - `B 7900` Reset All Controllers
-- `B 7B00` All Notes Off
 - `B 80vv` Pitch Bend Range
 - `B 81vv` Fine Tune
 - `B 82vv` Coarse Tune
