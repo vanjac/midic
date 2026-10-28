@@ -73,9 +73,8 @@ def write_midi_event(args: argparse.Namespace, state: State, data: Sequence[int]
 			write_bytes(args, bytes(data))
 
 def write_col_midi_event(args: argparse.Namespace, state: State, col: ColumnState, data: list[int]):
-	if not col.mute:
-		data[0] |= col.channel
-		write_midi_event(args, state, data)
+	data[0] |= col.channel
+	write_midi_event(args, state, data)
 
 def write_sysex(args: argparse.Namespace, state: State, data: Sequence[int]):
 	if len(data) >= 255:
@@ -139,6 +138,7 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 	if len(evstr) != 5:
 		raise ParseError(f'Invalid event syntax: {field}')
 
+	cmd = evstr[0].upper()
 	w = parse_hex(evstr[1:5])
 	if t == 1:
 		col.interp_from = w
@@ -146,14 +146,20 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 		w = int(w * t + col.interp_from * (1-t))
 	b1 = w >> 8
 	b2 = w & 0xFF
-	match evstr[0].upper():
+
+	if cmd == 'M':
+		mute = b1 & 0xF
+		validate_range(mute, 0, 1)
+		validate_range(b2, 0, 0) # reserved
+		release_note(args, state, col, col.held_key, 0x7F)
+		col.channel = b1 >> 4
+		col.mute = bool(mute)
+	if col.mute:
+		return
+
+	match cmd:
 		case 'M':
-			mute = b1 & 0xF
-			validate_range(mute, 0, 1)
-			validate_range(b2, 0, 0) # reserved
-			release_note(args, state, col, col.held_key, 0x7F)
-			col.channel = b1 >> 4
-			col.mute = bool(mute)
+			pass
 		case 'K':
 			validate_range(b1, 0, 0x7F) # key
 			validate_range(b2, 0, 0x7F) # velocity
@@ -215,7 +221,7 @@ def process_event(args: argparse.Namespace, state: State, col: ColumnState, fiel
 		case 'S':
 			state.delta_ticks += b1
 			state.repeat = b2
-		case cmd:
+		case _:
 			raise ParseError(f'Unknown event command: {cmd}')
 
 def process_line(args: argparse.Namespace, state: State, line: str):
